@@ -42,15 +42,13 @@
             <span class="icon-stories"></span> STORIES</a>
         <span class="icon-search icon-search2"></span>
         <div class="m_search">
-            <input type="text" placeholder="Search Videos.." id="m_search">
+            <input type="text" placeholder="Search Videos.." ng-model="m_searchtxt" ng-change="getSearchData(m_searchtxt)" id="m_search">
             <span class="icon-cross"></span>
         </div>
         <ul class="m_search_results">
-        <li><a href="#">Funny Video</a></li>
-        <li><a href="#">Bollywood Video</a></li>
-        <li><a href="#">Punjabi Song</a></li>
-        <li><a href="#">Vines</a></li>
-        <li><a href="#">Motivational Video</a></li>
+        <li ng-repeat="searchitem in searcheVideoData">
+            <a href="javascript:void(0)" ng-click="setGlobalVideoVariable(m_searchtxt)">{{searchitem.title}}</a>
+        </li>
     </ul>
     </div>
     
@@ -59,24 +57,14 @@
             <img src="images/google-play.png" width="117" height="35" alt="" class="right" />
         </a>
         <div class="search">
-            <input type="text" id="search" placeholder="Search Videos..">
-            <span class="icon-search"></span>
+            <input type="text" id="search" ng-model="searchtxt" ng-change="getSearchData(searchtxt)" placeholder="Search Videos..">
+            <span class="icon-search" ng-click="getSearchClick(searchtxt)"></span>
             <ul class="search_results">
-                <li>
-                    <a href="#">Funny Video</a>
+                <li ng-repeat="searchitem in searcheVideoData">
+                    <a href="javascript:void(0)" ng-click="searchedDropDownDataOnClick(searchitem)">{{searchitem.title}}</a>
                 </li>
-                <li>
-                    <a href="#">Bollywood Video</a>
-                </li>
-                <li>
-                    <a href="#">Punjabi Song</a>
-                </li>
-                <li>
-                    <a href="#">Vines</a>
-                </li>
-                <li>
-                    <a href="#">Motivational Video</a>
-                </li>
+                <li ng-if="searcheVideoData.length <=0"><a>Nothing Found</a></li>
+               
             </ul>
     </div>
     </div>
@@ -90,8 +78,11 @@
             <div class="lt_box" id="leftsidebar2">
                 <ul>
                     <li>
-                        <a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all' || activeCat == null ? 'active' : ''">All Videos</a>
+                        <a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all'  ? 'active' : ''">All Videos</a>
                     </li>
+                   <!--  <li>
+                            <a href="javascript:void(0)" ng-click="getAllWebSeries()"  ng-class="activeCat === 'webseries'  ? 'active' : ''">Web Series</a>
+                        </li> -->
                     <li ng-repeat="item in allvideoCategoryName">
                         <a href="javascript:void(0)" ng-click="goTocategory(item)" ng-class="activeCat === item.id ? 'active' : ''">{{item.name}}</a>
                     </li>
@@ -103,13 +94,50 @@
           </div>
           
             <div class="rt_box rt_box_video">
+                <div ng-if="isLoading" class="loading_image">
+                    <img src="images/loading2.gif" alt="loading" >
+                </div>
+                <div ng-if="SearchResults" class="search_results_container"><strong>Search Results </strong> {{searchResultText}}</div>
+                <div ng-if="nothingFound" class="search_results_container">Nothing Found For {{searchResultText}}</div>
+                
                 <ul  infinite-scroll='loadData()'
                 infinite-scroll-use-document-bottom ='true'
-                infinite-scroll-distance='2' infinite-scroll-disabled='disabled' ng-if="videos">
+                infinite-scroll-distance='2' infinite-scroll-disabled='disabled' ng-if="!fromSearch">
                         <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
                         <li ng-repeat="x in videos">
                                 <div class="video_wrapper">
                                     <a ng-href="{{x.videoLink}}" target="_blank">
+                                        <span class="time">{{x.timeLength}}</span>
+                                        <span class="video-icon"></span>
+                                        <label style="display: none;">{{x.videoThumbnail}}</label>
+                                        <img ng-src="{{x.videoThumbnail}}" width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/> </a>
+                                    <div class="video-content">
+                                        <h2>{{x.title}}</h2>
+                                        <div class="tooltip">
+                                            <i class="tooltiptext">Share</i>
+                                            <a href="javascript:void(0)" class="video-share">
+                                                <span class="icon-share"></span>
+                                            </a>
+                                        </div>
+                                        <div class="tooltip">
+                                            <i class="tooltiptext">Download</i>
+                                            <a href="javascript:void(0)" class="video-dowload">
+                                                <span class="icon-download"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                  <!-- <li><a href="#" ng-click="chunksOfData(start,end)">More</a></li> -->
+                    
+                </ul>
+               
+                <ul   ng-if="fromSearch">
+                        <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
+                        <li ng-repeat="x in videos">
+                                <div class="video_wrapper">
+                                    <a ng-href="{{x.videoLink}}" target="_blank">
+                                            <span class="time">{{x.timeLength}}</span>
                                         <span class="video-icon"></span>
                                         <label style="display: none;">{{x.videoThumbnail}}</label>
                                         <img ng-src="{{x.videoThumbnail}}" width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/> </a>

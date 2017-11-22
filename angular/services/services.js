@@ -29,39 +29,80 @@ app.factory('Service', function ($resource, $rootScope, UIConfig) {
   
   return {
     rootApi:
-    $resource(rootURL + '/restcontroller', {}, {
+    $resource(rootURL + '/restTempletForWeb', {}, {
 
         getallimages :{
-            url: rootURL + '/restcontroller/getALlImages',
+            url: rootURL + '/restTempletForWeb/getALlImages',
             method: 'GET',
             isArray: true,
             transformResponse: defaultTransformResponse
         },
         fetchVideoByCatSeries: {
-        url: rootURL + '/restcontroller/fetchVideoByCatSeries',
+        url: rootURL + '/restTempletForWeb/fetchVideoByCatSeries',
         method: 'GET',
         isArray: true,
         transformResponse: defaultTransformResponse
         
       },
 
-      videoCategrylist :{
-        url: rootURL + '/restcontroller/getRestAllCategory',
+      Categrylist :{
+        url: rootURL + '/restTempletForWeb/getRestAllCategory',
         method: 'GET',
         isArray: true,
         transformResponse: defaultTransformResponse
           
       },
 
-      getAllVidsForUI :{
-        url: rootURL + '/restcontroller/getAllVidsForUI',
+      allCategorywiseVidsForUI :{
+        url: rootURL + '/restTempletForWeb/allCategorywiseVidsForUI',
         method: 'GET',
         isArray: true,
         transformResponse: defaultTransformResponse
 
-      }
-    })
+      },
+      allCategoryWiseImageForUI :{
+        url: rootURL + '/restTempletForWeb/allCategoryWiseImageForUI',
+        method: 'GET',
+        isArray: true,
+        transformResponse: defaultTransformResponse
 
-  }
+      },
+      searchData :{
+        url: rootURL + '/restTempletForWeb/Search', /* this api fetch video data */
+        method: 'GET',
+        isArray: true,
+        transformResponse: defaultTransformResponse
+
+     },
+      fetchBunchOfImage:{
+        url: rootURL + '/restTempletForWeb/fetchBunchOfImage',
+        method: 'GET',
+        isArray: true,
+        transformResponse: defaultTransformResponse
+  
+      },
+      getALlImages : {
+        url: rootURL + '/restTempletForWeb/getALlImages',
+        method: 'GET',
+        isArray: true,
+        transformResponse: defaultTransformResponse
+      },
+      searchImage:{
+        url: rootURL + '/restTempletForWeb/searchImage',
+        method: 'GET',
+        isArray: true,
+        transformResponse: defaultTransformResponse
+      },
+      getAllWebSeriesVideo :{
+        url: rootURL + '/restTempletForWeb/getAllWebSeriesVideo',
+        method: 'GET',
+        isArray: true,
+        transformResponse: defaultTransformResponse
+      }
+
+
+
+    }),
+}
 
 });
