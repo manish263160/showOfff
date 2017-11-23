@@ -52,10 +52,10 @@ app
        if(item){
         // console.log("cateName====",item.name);
         $scope.activeCat = item.id;
-        param = {categoryOrSeriesName : item.name , tablename : 'video'};
+        param = {catId : item.id };
        }else{
         $scope.activeCat = 'all';
-        param = {tablename : 'video'};
+        param = {};
        }
       Service.rootApi.allCategorywiseVidsForUI(param).$promise.then(function (response) {
         if (response.length > 0) {
@@ -90,6 +90,7 @@ app
 
     $scope.getSearchClick =function(searchtxt){
       $scope.activeCat = undefined;
+      $scope.nothingFound = false;
       if (searchtxt) {
         $scope.searchResultText = searchtxt;
         var param = { data: searchtxt }
@@ -100,10 +101,15 @@ app
               $scope.getAllVidsForUI = response;              
               $scope.videos = $scope.getAllVidsForUI.slice(0,20);
               $scope.SearchResults = true;
+              $scope.searcheVideoData = [];
+              $scope.searchtxt ="";
           }else{
             $scope.videos =[];
             $scope.SearchResults = true;
             $scope.nothingFound = true;
+            $scope.noLoaderShow = true;
+            $scope.searcheVideoData = [];
+            $scope.searchtxt ="";
           }
         });
       }
@@ -141,6 +147,11 @@ app
 
        }
 
+       $scope.playVideo =function(id){
+        console.log("iddddd====",id);
+       }
+
+/* ------------------------------------------------------ */
   var promise;
   // starts the interval
   $scope.start = function() {

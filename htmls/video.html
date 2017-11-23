@@ -56,17 +56,17 @@
         <a href="https://goo.gl/MF7YuQ" target="_blank" class="m_none t_none">
             <img src="images/google-play.png" width="117" height="35" alt="" class="right" />
         </a>
-        <div class="search">
-            <input type="text" id="search" ng-model="searchtxt" ng-change="getSearchData(searchtxt)" placeholder="Search Videos..">
-            <span class="icon-search" ng-click="getSearchClick(searchtxt)"></span>
+        <form class="search" ng-submit="getSearchClick(searchtxt)">
+            <input type="text" id="search" ng-model="searchtxt" autocomplete="off" ng-change="getSearchData(searchtxt)" placeholder="Search Videos..">
+            <span class="icon-search" ng-click="getSearchClick(searchtxt)" ></span>
             <ul class="search_results">
-                <li ng-repeat="searchitem in searcheVideoData">
+                <li ng-repeat="searchitem in searcheVideoData" ng-if="searcheVideoData.length > 0">
                     <a href="javascript:void(0)" ng-click="searchedDropDownDataOnClick(searchitem)">{{searchitem.title}}</a>
                 </li>
-                <li ng-if="searcheVideoData.length <=0"><a>Nothing Found</a></li>
+                <!-- <li ng-if="searcheVideoData.length <=0"><a>Nothing Found</a></li> -->
                
             </ul>
-    </div>
+        </form>
     </div>
      </div>
     </div>
@@ -106,11 +106,15 @@
                         <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
                         <li ng-repeat="x in videos">
                                 <div class="video_wrapper">
+                                    
                                     <a ng-href="{{x.videoLink}}" target="_blank">
                                         <span class="time">{{x.timeLength}}</span>
                                         <span class="video-icon"></span>
                                         <label style="display: none;">{{x.videoThumbnail}}</label>
-                                        <img ng-src="{{x.videoThumbnail}}" width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/> </a>
+                                        <img ng-src="{{x.videoThumbnail}}" width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/> 
+                                        <!-- <ng-youtube-embed video="x.videoLink" width="720" height="405" videoid="myvideo{{x.id}}">
+                                            </ng-youtube-embed> -->
+                                    </a>
                                     <div class="video-content">
                                         <h2>{{x.title}}</h2>
                                         <div class="tooltip">

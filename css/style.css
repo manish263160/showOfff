@@ -330,10 +330,9 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   @media (min-width:1152px) and (max-width: 1279px)	{
     .container{ width:1080px;}		
   }
-
   .loading_image{
     position: fixed;
     left: 50%;
-    top: 70%;
+    top: 50%;
     z-index: 1000;
   }

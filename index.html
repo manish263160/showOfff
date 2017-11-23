@@ -6,10 +6,14 @@
     <title>Showofff: Videos, Memes, Quotes, Stories</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/aboutus.css" rel="stylesheet" type="text/css">
     <link href="images/showofff.ico" rel="shortcut icon" type="image/x-icon">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/jquery.sticky-sidebar-scroll.min.js"></script>
+    <script src="http://showofff.com/wp-content/uploads/2017/08/jssor.slider-23.1.1.mini_.js" type="text/javascript"></script>
+
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 <!-- Angular Material requires Angular.js Libraries -->
@@ -33,8 +37,8 @@
 <!-- <script src="vendor/bower_components/angular-click-outside/clickoutside.directive.js"></script> -->
 <!-- <script src="vendor/ngtables/ng-table.min.js"></script> -->
 <script src="vendor/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
-
-
+<script src="vendor/bower_components/ng-youtube-embed/build/ng-youtube-embed.min.js"></script>
+<script src="vendor/angular-video/js/anguvideo.js"></script>
 <!-- component app js -->
 <script src="angular/app.js"></script>
 <script src="angular/UIConfig.js"></script>
@@ -42,12 +46,14 @@
 <script src="angular/services/services.js"></script>
 <script src="angular/controller/allvideoController.js"></script>
 <script src="angular/controller/storiesController.js"></script>
+<script src="angular/controller/aboutusController.js"></script>
+
 <!-- <script src="angular/services/lazyloading.js"></script> -->
 
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-    <script src="js/html5.js"></script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5.js"></script>
+      <script src="js/respond.min.js"></script>
     <![endif]-->
   </head>
   
@@ -55,5 +61,14 @@
     
     <div ui-view="content" ></div>
   </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49391184-1', 'auto');
+  ga('send', 'pageview');
+  </script>
   </html>
   

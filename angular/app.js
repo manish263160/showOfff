@@ -1,5 +1,5 @@
 var app = angular.module('app',['UIConfig' , 'ui.router', 
-'ngResource', 'infinite-scroll', 
+'ngResource', 'infinite-scroll', 'ngYoutubeEmbed' , 'anguvideo'
 
 ]);
 

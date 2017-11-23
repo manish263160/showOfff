@@ -1,0 +1,254 @@
+
+body {
+	background: #fff;
+	margin: 0px;
+	padding: 0px;
+	color: #1c2324;
+}
+.container2 {
+	width: 1030px;
+	overflow: hidden;
+	margin: 0px auto;
+	padding: 36px 0 0 0;
+	position: relative;
+}
+.how_it_works {
+	width: 1000px;
+	margin: 40px auto;
+	overflow: hidden;
+}
+h1 {
+	font-size: 50px; line-height: 0;
+	margin-top: 10px;
+}
+h2 {
+	font-weight: normal;
+	font-size: 42px;
+	margin-bottom: 30px;
+}
+section {
+	text-align: center;
+	padding: 40px 0;
+	overflow: hidden;
+}
+p {
+	margin : 0 20px;
+}
+.padd_top0 {
+	padding-top: 0px;
+}
+.left_box {
+	float: left;
+	width: 48%;
+}
+.right_box {
+	float: left;
+	width: 44%;
+	text-align: center;
+	font-size:22px;
+	line-height:32px;
+}
+.banner {
+	width: 100%;
+	height: 479px;
+	white-space: nowrap;
+	overflow-x: scroll;
+	text-align: left;
+}
+.banner img {
+	width: auto;
+	margin-right: 4px;
+	display: inline-block;
+	border: 1px #eee solid;
+}
+.pull_left {
+	float: left;
+	padding-top: 4px;
+}
+.pull_right {
+	float: right;
+}
+.line-colors {
+	position: absolute;
+	top: 0;
+	right: 7%;
+}
+.line-colors span {
+	width: 27px;
+	height: 4px;
+	float: left;
+}
+.line-colors .red {
+	background: #ff2824;
+}
+.line-colors .orange {
+	background: #ff7722;
+}
+.line-colors .yellow {
+	background: #fff300;
+}
+.line-colors .green {
+	background: #53d86a;
+}
+.line-colors .blue {
+	background: #00a8ff;
+}
+.line-colors .indigo {
+	background: #6e47fe;
+}
+.line-colors .violet {
+	background: #ff00fe;
+}
+.mobile {
+	width: 302px;
+	margin: 0px auto;
+	height:585px;
+	padding: 68px 16px 0 12px;
+	overflow: hidden;
+	background: url(images/mobile-bg.png) 0 0 no-repeat;
+}
+.mobile_slider {
+	position: relative;
+	margin: 0 auto;
+	top: 0px;
+	left: 0px;
+	width: 261px;
+	height: 471px;
+	box-shadow: 0 0 0 1px #f0f0f0;
+	overflow: hidden;
+}
+.mobile_slider img {
+	width: 100%;
+	height: 100%;
+}
+footer {
+	overflow: hidden;
+	text-align: center;
+	padding: 17px 0;
+	vertical-align: middle;
+	color: #666;
+	font-size: 15px;
+	background: #fff;
+	position: relative;
+}
+footer img {
+	vertical-align: middle;
+}
+.red{color: #FF4B4B;}
+.social-icons{ position: relative; bottom: auto; display: inline-block}
+.social-icons a{ border-radius: 50px; width: 34px; height: 34px; line-height:38px; font-size: 18px; margin-left: 6px; }
+.material-icons{ font-size: 20px; vertical-align: middle;}
+.navigation2{ position: relative; font-weight: bold; padding: 10px 0; width:100%; font-size: 16px; margin:0px auto;  background: rgba(255, 255, 255, 0.1); text-align: center;}
+		.navigation2 a{color: #fff; padding: 15px; text-decoration: none; opacity: .75;}
+		.navigation2 a:hover{ opacity: 1;}
+		.m_logo {
+	display: none;
+}
+.m_footer {
+	display: none;
+}
+.d_footer {
+	display: block;
+}
+.d_show {
+	display: block;
+}
+.m_show {
+	display: none;
+}
+
+/* Mobile */
+
+@media (min-width: 320px) and (max-width: 1023px) {
+h1 {
+	font-size: 33px;
+}
+h2 {
+	margin-bottom: 25px;
+	font-size: 34px;
+}
+section {
+	padding: 20px 0;
+}
+.how_it_works {
+	width: 100%;
+	margin: 3% 0%;
+}
+.video_ht {
+	height: 230px;
+}
+.container2 {
+	width: 92%;
+	padding: 0 4%;
+}
+.left_box {
+	width: 92%;
+	padding: 4% 4% 0 4%;
+}
+.mobile {
+	width: 269px;
+	background-size: cover;
+	padding: 62px 14px 0 6px;
+	height: 472px;
+}
+.right_box {
+	width: 100%;
+	margin-bottom: 50px;
+}
+.mobile_slider {
+	width: 229px;
+	height: 407px;
+}
+.mobile_slider img {
+	width: 100%;
+	height: 100%;
+}
+.logo {
+	display: none;
+}
+.m_logo {
+	display: block;
+	text-align: center;
+	padding: 20px 0;
+}
+.m_footer {
+	display: block;
+}
+.d_footer {
+	display: none;
+}
+	.m_footer p{ margin: 0 0 13px 0;}
+.banner {
+	overflow-y: hidden;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
+	white-space: nowrap;
+}
+.responsive_img {
+	width: 98%;
+	height: auto;
+	margin-left: 1%;
+}
+.line-colors {
+	right: 24%;
+}
+.d_show {
+	display: none;
+}
+.m_show {
+	display: block;
+}
+}
+		
+/* tablet */
+@media (max-width: 1023px) and (min-width: 768px){
+.video_ht { height: 425px;}
+.line-colors {left: 50%;margin-left: -92px;}
+	
+		}
+
+/* Desktop */
+@media (min-width:1024px) and (max-width: 1151px)	{
+	.container2{ width: 100%;}	
+}
+		

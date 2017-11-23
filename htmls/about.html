@@ -1,367 +1,12 @@
-<!doctype html>
-<html>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <title>Showofff: Videos, Memes, Quotes, Stories</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
-    <link href="images/showofff.ico" rel="shortcut icon" type="image/x-icon">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript">
 
-        jQuery(document).ready(function ($) {
-            var jssor_1_options = {
-
-              $AutoPlay: 1,
-
-              $DragOrientation: 2,
-
-              $PlayOrientation: 2,
-
-              $ArrowNavigatorOptions: {
-
-                $Class: $JssorArrowNavigator$
-
-              }
-
-            };
-
-            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-
-
-            /*responsive code begin*/
-
-            /*remove responsive code if you don't want the slider scales while window resizing*/
-
-            function ScaleSlider() {
-
-                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-
-                if (refSize) {
-
-                    refSize = Math.min(refSize, 600);
-
-                    jssor_1_slider.$ScaleWidth(refSize);
-
-                }
-
-                else {
-
-                    window.setTimeout(ScaleSlider, 30);
-
-                }
-
-            }
-
-          /*  ScaleSlider();
-
-            $(window).bind("load", ScaleSlider);
-
-            $(window).bind("resize", ScaleSlider);
-
-            $(window).bind("orientationchange", ScaleSlider);*/
-
-            /*responsive code end*/
-
-			
-
-		// fix header height
-
-/*		function setDivHeight() {
-
-			//height of HTML document
-
-			var documentHeight = $(document).height();
-
-			//height of browser viewport
-
-			var viewportHeight = $(window).height();
-
-			$('.container').height(viewportHeight); // OR viewportHeight - 180 as appropriate
-
-			}
-
-			// = onload and onresize
-
-			$(window).on("load resize", setDivHeight);*/
-
-		});
-
-    </script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-    </head>
-    <style type="text/css">
-body {
-	background: #fff;
-	margin: 0px;
-	padding: 0px;
-	color: #1c2324;
-}
-.container2 {
-	width: 1170px;
-	overflow: hidden;
-	margin: 0px auto;
-	padding: 50px 0 0 0;
-	position: relative;
-}
-.how_it_works {
-	width: 1000px;
-	margin: 40px auto;
-	overflow: hidden;
-}
-h1 {
-	font-family: 'Oswald', sans-serif;
-	font-weight: normal;
-	font-size: 42px;
-	margin-top: 10px;
-}
-h2 {
-	font-family: 'Oswald', sans-serif;
-	font-weight: normal;
-	font-size: 42px;
-	margin-bottom: 30px;
-}
-section {
-	text-align: center;
-	padding: 40px 0;
-	overflow: hidden;
-}
-p {
-	margin : 0 20px;
-}
-.padd_top0 {
-	padding-top: 0px;
-}
-.left_box {
-	float: left;
-	width: 48%;
-}
-.right_box {
-	float: left;
-	width: 44%;
-	text-align: center;
-	font-size: 18px;
-	line-height: 30px;
-}
-.banner {
-	width: 100%;
-	height: 479px;
-	white-space: nowrap;
-	overflow-x: scroll;
-	text-align: left;
-}
-.banner img {
-	width: auto;
-	margin-right: 4px;
-	display: inline-block;
-	border: 1px #eee solid;
-}
-.pull_left {
-	float: left;
-	font-size: 13px;
-	padding-top: 4px;
-	color: #888;
-}
-.pull_right {
-	float: right;
-}
-.line-colors {
-	position: absolute;
-	top: 0;
-	right: 7%;
-}
-.line-colors span {
-	width: 27px;
-	height: 4px;
-	float: left;
-}
-.line-colors .red {
-	background: #ff2824;
-}
-.line-colors .orange {
-	background: #ff7722;
-}
-.line-colors .yellow {
-	background: #fff300;
-}
-.line-colors .green {
-	background: #53d86a;
-}
-.line-colors .blue {
-	background: #00a8ff;
-}
-.line-colors .indigo {
-	background: #6e47fe;
-}
-.line-colors .violet {
-	background: #ff00fe;
-}
-.mobile {
-	width: 302px;
-	margin: 0px auto;
-	height: 611px;
-	padding: 68px 16px 0 12px;
-	overflow: hidden;
-	background: url(http://showofff.com/wp-content/uploads/2017/05/phone2.jpg) 0 0 no-repeat;
-}
-.mobile_slider {
-	position: relative;
-	margin: 0 auto;
-	top: 0px;
-	left: 0px;
-	width: 261px;
-	height: 471px;
-	box-shadow: 0 0 0 1px #f0f0f0;
-	overflow: hidden;
-}
-.mobile_slider img {
-	width: 100%;
-	height: 100%;
-}
-footer {
-	overflow: hidden;
-	text-align: center;
-	padding: 25px 0;
-	vertical-align: middle;
-	color: #666;
-	font-size: 15px;
-	background: #f7f7f7;
-	position: relative;
-}
-footer img {
-	vertical-align: middle;
-}
-.m_logo {
-	display: none;
-}
-.m_footer {
-	display: none;
-}
-.d_footer {
-	display: block;
-}
-.d_show {
-	display: block;
-}
-.m_show {
-	display: none;
-}
-
-/* Mobile */
-
-@media (min-width: 320px) and (max-width: 1023px) {
-h1 {
-	font-size: 33px;
-}
-h2 {
-	margin-bottom: 25px;
-	font-size: 34px;
-}
-section {
-	padding: 20px 0;
-}
-.how_it_works {
-	width: 100%;
-	margin: 3% 0%;
-}
-.video_ht {
-	height: 230px;
-}
-.container2 {
-	width: 92%;
-	padding: 0 4%;
-}
-.left_box {
-	width: 92%;
-	margin-bottom: 30px;
-	padding: 4% 4% 0 4%;
-}
-.mobile {
-	width: 269px;
-	background-size: cover;
-	padding: 62px 14px 0 6px;
-	height: 472px;
-}
-.right_box {
-	width: 100%;
-	margin-bottom: 50px;
-}
-.mobile_slider {
-	width: 229px;
-	height: 407px;
-}
-.mobile_slider img {
-	width: 100%;
-	height: 100%;
-}
-.logo {
-	display: none;
-}
-.m_logo {
-	display: block;
-	text-align: center;
-	padding: 20px 0;
-}
-.m_footer {
-	display: block;
-}
-.d_footer {
-	display: none;
-}
-.banner {
-	overflow-y: hidden;
-	overflow-x: scroll;
-	-webkit-overflow-scrolling: touch;
-	white-space: nowrap;
-}
-.responsive_img {
-	width: 98%;
-	height: auto;
-	margin-left: 1%;
-}
-.line-colors {
-	right: 24%;
-}
-.d_show {
-	display: none;
-}
-.m_show {
-	display: block;
-}
-}
-		
-/* tablet */
-@media (max-width: 1023px) and (min-width: 768px){
-.video_ht { height: 425px;}
-.line-colors {left: 50%;margin-left: -92px;}
-	
-		}
-
-/* Desktop */
-@media (min-width:1024px) and (max-width: 1151px)	{
-	.container2{ width: 100%;}	
-}
-		
-</style>
-
-    <body>
     <!-- Menu Drawer start -->
 <div class="menu_drawer">
 <span class="icon-cross"></span>
 <br>
 	<ul>
-		<li><a href="index.html">Stories</a></li>
-		<li><a href="video.html">Videos</a></li>
-		<li><a href="about.html">About Us</a></li>
+			<li><a ui-sref="stories">Stories</a></li>
+            <li><a ui-sref="video">Videos</a></li>
+            <li><a ui-sref="aboutus">About Us</a></li>
 		<li><br>
 showofff.hello@gmail.com
 <div class="social-icons">
@@ -375,88 +20,62 @@ showofff.hello@gmail.com
 </div>
 <!--/ Menu Drawer end -->
 
-<!-- Navigation Start -->
-<div class="navigation">
-      <div class="container">
-    <div class="col1"><img src="images/logo.png" width="116" height="36" alt="" class="left"/></div>
-    <div class="col2 links"><span class="icon-menu"></span>  <a href="index.html"><span class="icon-video"></span> VIDEOS</a> &nbsp; <a href="stories.html"><span class="icon-stories"></span> STORIES</a> </div>
-  <div class="col1"><a href="https://goo.gl/MF7YuQ" target="_blank" class="m_none t_none"><img src="images/google-play.png" width="117" height="35" alt="" class="right"/></a>
-<div class="search"><input type="text" id="search" placeholder="Search Videos.." ><span class="icon-search"></span>
-<ul class="search_results">
-	<li><a href="#">Funny Video</a></li>
-	<li><a href="#">Bollywood Video</a></li>
-	<li><a href="#">Punjabi Song</a></li>
-	<li><a href="#">Vines</a></li>
-	<li><a href="#">Motivational Video</a></li>
-</ul>
-</div>
-</div>
-  </div>
-    </div>
-<!--/ Navigation end --> 
-<br>
-<br>
-<header>
+
+
+<header class="bg_animate">
+     <div class="navigation2"><div class=""><a href="index.html"><span class="icon-video"></span> VIDEOS</a> <a href="stories.html"><span class="icon-stories"></span> STORIES</a></div></div>
+
       <div class="container2">
     <div class="left_box">
-          <div class="m_logo"> <img src="http://showofff.com/wp-content/uploads/2017/07/logo.png"/></div>
+          <div class="m_logo"><img src="images/logo-white.png" alt="SHOWOFF"/></div>
           <div class="mobile">
         <div id="jssor_1" class="mobile_slider">
-              <div data-u="slides" class="mobile_slider">
-            <div> <img data-u="image" alt="Showofff - Trending Videos" title="Showofff - Trending Videos" src="http://showofff.com/wp-content/uploads/2017/10/showofff-video.jpg" /> </div>
-            <div> <img data-u="image" alt="Showofff - Memes" title="Showofff - Memes" src=" http://showofff.com/wp-content/uploads/2017/10/mia-khalifa2.jpg" /> </div>
-            <div> <img data-u="image" alt="Showofff - Live Stories" title="Showofff - Live Stories" src="http://showofff.com/wp-content/uploads/2017/09/live-stories.jpg" /> </div>
-            <div> <img data-u="image" alt="Showofff - Creative Graphics" title="Showofff - Creative Graphics" src="http://showofff.com/wp-content/uploads/2017/09/creative-graphics.jpg" /> </div>
-            <div> <img data-u="image" alt="Showofff - Interesting Topics" title="Showofff - Interesting Topics" src="http://showofff.com/wp-content/uploads/2017/09/interesting-topics.jpg" /> </div>
+          <div data-u="slides" class="mobile_slider">
+            <div> <img data-u="image" alt="SHOWOFF - Trending Videos" title="SHOWOFF - Trending Videos" src="http://showofff.com/wp-content/uploads/2017/10/showofff-video.jpg" /> </div>
+            <div> <img data-u="image" alt="SHOWOFF - Memes" title="SHOWOFF - Memes" src=" http://showofff.com/wp-content/uploads/2017/10/mia-khalifa2.jpg" /> </div>
+            <div> <img data-u="image" alt="SHOWOFF - Live Stories" title="SHOWOFF - Live Stories" src="http://showofff.com/wp-content/uploads/2017/09/live-stories.jpg" /> </div>
+            <div> <img data-u="image" alt="SHOWOFF - Creative Graphics" title="SHOWOFF - Creative Graphics" src="http://showofff.com/wp-content/uploads/2017/09/creative-graphics.jpg" /> </div>
+            <div> <img data-u="image" alt="SHOWOFF - Interesting Topics" title="SHOWOFF - Interesting Topics" src="http://showofff.com/wp-content/uploads/2017/09/interesting-topics.jpg" /> </div>
           </div>
-            </div>
+        </div>
       </div>
         </div>
     <div class="right_box">
-          <div class="logo"> <img src="http://showofff.com/wp-content/uploads/2017/09/showofff-logo.png" width="106" height="108" /><br />
+         <br><br>
+          <p class="logo"> <img src="images/logo-white.png" alt="Showoff"/>
         <br />
-      </div>
-          <h1>Videos, Memes & Stories</h1>
-          <p> Showofff is an app where user get the Videos, Memes & Stories in graphics according to their interest. It provides an attractive and intuitive user experience. <br />
-        <br />
-        Get Videos, Memes & Stories from interesting topics: Entertainment, Technology, Sports, Politics, Web Series, Vines, Songs, Health, Lifestyle, Startup, Quotes, Humour etc.. <br>
-        <br>
-        Share your photo with quotes or YouTube Videos we will share on our app.
+<br><br>
+      </p>
+          <h1>Videos & Stories</h1>
+          <p>Get the Best Videos, Memes, Quotes & Stories in graphics according to their interest.<br />
+<br>
         
         
-        
-        .</p>
-          <br />
-          <a href="https://goo.gl/MF7YuQ" target="_blank"> <img src="http://showofff.com/wp-content/uploads/2017/05/playstore.jpg" width="183" height="60" /></a></div>
+</p>
+                    <a href="https://goo.gl/MF7YuQ" target="_blank"><img src="images/dowload-app.png" width="200" height="56" alt=""/></a>
+          </div>
   </div>
     </header>
-<section> <br />
-      <h2>How It Works</h2>
-      <div class="how_it_works">
-    <iframe width="100%" height="563" class="video_ht" src="https://www.youtube.com/embed/vU-dyZKRgO0" frameborder="0" allowfullscreen></iframe>
-  </div>
-    </section>
-<section>
-      <h2>Product</h2>
-      <div class="banner"> <img src="http://showofff.com/wp-content/uploads/2017/09/showofff-video-3.jpg" title="Showofff - Videos, Memes & Stories" alt="Showofff - Videos, Memes & Stories" /> <img src="http://showofff.com/wp-content/uploads/2017/10/story-meme-t.jpg" title="Showofff - Videos, Memes & Stories" alt="Showofff - Videos, Memes & Stories"  /> <img src="http://showofff.com/wp-content/uploads/2017/10/story-qt-t.jpg" title="Showofff - Videos, Memes & Stories" alt="Showofff - Videos, Memes & Stories"  /> <img src="http://showofff.com/wp-content/uploads/2017/09/showofff-video-1-1.jpg" title="Showofff - Videos, Memes & Stories" alt="Showofff - Videos, Memes & Stories"  /> <img src="http://showofff.com/wp-content/uploads/2017/10/mia-khalifa.jpg"  title="Showofff - Videos, Memes & Stories" alt="Showofff - Videos, Memes & Stories"  /> <img src="http://showofff.com/wp-content/uploads/2017/09/showofff-video-2-1.jpg"  title="Mia Khalifa, Showofff - Videos, Memes & Stories" alt="Mia Khalifa, Showofff - Videos, Memes & Stories"  /> <img src="http://showofff.com/wp-content/uploads/2017/09/showofff-video-4.jpg" title="Showofff - Videos, Memes & Stories" alt="Showofff - Videos, Memes & Stories" /> <img src=" http://showofff.com/wp-content/uploads/2017/10/story-meme2-t.jpg" title="Showofff - Videos, Memes & Stories" alt="Showofff - Videos, Memes & Stories" /> <img src="http://showofff.com/wp-content/uploads/2017/09/showofff-video-7.jpg" title="Showofff - Videos, Memes & Stories" alt="Showofff - Videos, Memes & Stories" /> <img src="http://showofff.com/wp-content/uploads/2017/09/search.jpg" title="Showofff - Videos, Memes & Stories" alt="Showofff - Videos, Memes & Stories" /> <img src="http://showofff.com/wp-content/uploads/2017/09/showofff-video-6.jpg" title="Showofff - Videos, Memes & Stories" alt="Showofff - Videos, Memes & Stories" /> </div>
-    </section>
-<section>
-      <h2>Interesting Topics</h2>
-      <div class="d_show"><img src="http://showofff.com/wp-content/uploads/2017/05/phone3.jpg" /></div>
-      <div class="m_show"><img src="http://showofff.com/wp-content/uploads/2017/05/phone4.jpg" /></div>
-      <br />
-      <br />
-    </section>
+
 <footer>
-      <div class="line-colors"> <span class="red"></span> <span class="orange"></span> <span class="yellow"></span> <span class="green"></span> <span class="blue"></span> <span class="indigo"></span> <span class="violet"></span> </div>
+      <!-- <div class="line-colors"> <span class="red"></span> <span class="orange"></span> <span class="yellow"></span> <span class="green"></span> <span class="blue"></span> <span class="indigo"></span> <span class="violet"></span> </div> -->
+      
       <div class="m_footer">
-    <p><a href="https://www.facebook.com/showofff7" target="_blank"><img src="http://showofff.com/wp-content/uploads/2017/05/facebook.png" width="26" height="26" /></a> &nbsp; <a href="https://twitter.com/showofff7" target="_blank"><img src="http://showofff.com/wp-content/uploads/2017/05/twitter.png" width="26" height="26" /></a> &nbsp; <a href="https://www.instagram.com/showofff7" target="_blank"><img src="http://showofff.com/wp-content/uploads/2017/05/instagram.png" width="26" height="26" /></a></p>
-    <p>showofff.hello@gmail.com</p>
-    <p><span>Copyright &copy; 2017 All Right Reserved</span></p>
+<p><div class="social-icons">
+			<a href="https://www.facebook.com/showofff7" target="_blank" class="facebook active"><i class="icon-facebook"></i></a><a href="https://twitter.com/showofff7" target="_blank" class="twitter active"><i class="icon-twitter"></i></a><a href="https://instagram.com/showofff7" target="_blank" class="instagram active"><i class="icon-instagram"></i></a><a href="https://www.youtube.com/channel/UCuqDR9bUwIaE7nxZwqbobaQ" target="_blank" class="youtube active"><i class="icon-youtube"></i></a>
+			</div>
+			</p>
+    <p>showoff.hello@gmail.com</p>
+    <p><span>&copy; 2017 SHOWOFF - Made with <span class="red"><i class="material-icons">favorite</i></span> in India</span></p>
   </div>
       <div class="d_footer">
-    <div class="container padd_top0"><span class="pull_left">Copyright &copy; 2017 All Right Reserved</span> <span class="pull_right">showofff.hello@gmail.com &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/showofff7" target="_blank"><img src="http://showofff.com/wp-content/uploads/2017/05/facebook.png" width="26" height="26" /></a> &nbsp; <a href="https://twitter.com/showofff7" target="_blank"><img src="http://showofff.com/wp-content/uploads/2017/05/twitter.png" width="26" height="26" /></a> &nbsp; <a href="https://www.instagram.com/showofff7" target="_blank"><img src="http://showofff.com/wp-content/uploads/2017/05/instagram.png" width="26" height="26" /></a></span></div>
+    <div class="container padd_top0"><div class="pull_left">&copy; 2017 SHOWOFF - Made with <span class="red"><i class="material-icons">favorite</i></span> in India</div>
+		<div class="pull_right"><i class="material-icons">mail</i> showoff.hello@gmail.com &nbsp; &nbsp; | &nbsp;&nbsp;
+		<div class="social-icons">
+			<a href="https://www.facebook.com/showofff7" target="_blank" class="facebook active"><i class="icon-facebook"></i></a><a href="https://twitter.com/showofff7" target="_blank" class="twitter active"><i class="icon-twitter"></i></a><a href="https://instagram.com/showofff7" target="_blank" class="instagram active"><i class="icon-instagram"></i></a><a href="https://www.youtube.com/channel/UCuqDR9bUwIaE7nxZwqbobaQ" target="_blank" class="youtube active"><i class="icon-youtube"></i></a>
+			</div></div></div>
   </div>
     </footer>
-</body>
-</html>
+    
+
+

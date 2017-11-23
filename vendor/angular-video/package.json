@@ -1,0 +1,55 @@
+{
+  "_from": "angular-video",
+  "_id": "angular-video@0.0.2",
+  "_inBundle": false,
+  "_integrity": "sha1-myhPLIFSYYEltvtflvBWuFfAx8c=",
+  "_location": "/angular-video",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "angular-video",
+    "name": "angular-video",
+    "escapedName": "angular-video",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-video/-/angular-video-0.0.2.tgz",
+  "_shasum": "9b284f2c8152618125b6fb5f96f056b857c0c7c7",
+  "_spec": "angular-video",
+  "_where": "/home/manishkm/Downloads/Showofff",
+  "author": {
+    "name": "m.a.s"
+  },
+  "bugs": {
+    "url": "https://github.com/andoulla/angular-video/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A directive that takes in a vimeo or a youtube url and converts it into an embedded friendly url and the displays it.",
+  "homepage": "https://github.com/andoulla/angular-video#readme",
+  "keywords": [
+    "video",
+    "angularjs",
+    "embedded",
+    "directive",
+    "youtube",
+    "vimeo"
+  ],
+  "license": "MIT",
+  "main": "js/anguvideo.js",
+  "name": "angular-video",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andoulla/angular-video.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.2"
+}

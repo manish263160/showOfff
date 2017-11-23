@@ -114,7 +114,7 @@ showofff.hello@gmail.com
 					<!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
 					<li ng-repeat="x in videos">
 							<img ng-src="{{x.imageUrl}}"  onerror="this.src='http://via.placeholder.com/720x1163';" width="720" height="1163" alt=""/>
-							<a href="{{x.imageLink}}" target="_blank" class="more"> Read More </a>
+							<a href="{{x.imageLink}}" ng-if="x.imageLink" target="_blank" class="more"> Read More  </a>
 							
 							<span class="share_btn"><a href="#"><div class="tooltip"><i class="tooltiptext">Share</i>
 								<i class="icon-share"></i></div></a></span>
@@ -123,8 +123,9 @@ showofff.hello@gmail.com
 
 			<ul   ng-if="fromSearch">
 							<li ng-repeat="x in videos">
-									<img ng-src="{{x.imageUrl}}"  onerror="this.src='http://via.placeholder.com/720x1163';" width="720" height="1163" alt=""/>
-									<a href="{{x.imageLink}}" target="_blank" class="more"> Read More </a>
+								<img ng-src="{{x.imageUrl}}"  onerror="this.src='http://via.placeholder.com/720x1163';" width="720" height="1163" alt=""/>
+								<a href="{{x.imageLink}}" ng-if="x.imageLink" target="_blank" class="more"> Read More </a>
+								
 									
 									<span class="share_btn"><a href="#"><div class="tooltip"><i class="tooltiptext">Share</i>
 										<i class="icon-share"></i></div></a></span>
