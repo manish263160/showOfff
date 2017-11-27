@@ -67,8 +67,8 @@ app.factory('Service', function ($resource, $rootScope, UIConfig) {
         transformResponse: defaultTransformResponse
 
       },
-      searchData :{
-        url: rootURL + '/restTempletForWeb/Search', /* this api fetch video data */
+      searchVideo :{
+        url: rootURL + '/restTempletForWeb/searchVideo', /* this api fetch video data */
         method: 'GET',
         isArray: true,
         transformResponse: defaultTransformResponse

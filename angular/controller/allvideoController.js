@@ -76,7 +76,7 @@ app
       if (searchtxt) {
         $scope.searchResultText = searchtxt;
         var param = { data: searchtxt }
-        Service.rootApi.searchData(param).$promise.then(function (response) {
+        Service.rootApi.searchVideo(param).$promise.then(function (response) {
           // console.log("response searcheVideoData===", response);
           if (response.length > 0) {
            
@@ -94,7 +94,7 @@ app
       if (searchtxt) {
         $scope.searchResultText = searchtxt;
         var param = { data: searchtxt }
-        Service.rootApi.searchData(param).$promise.then(function (response) {
+        Service.rootApi.searchVideo(param).$promise.then(function (response) {
           // console.log("response search===", response.length);
           if (response.length > 0) {
             $scope.videos =[];
