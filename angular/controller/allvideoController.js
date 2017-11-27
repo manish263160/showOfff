@@ -20,7 +20,7 @@ app
 
 
     /* all videos from DB without category*/
-    Service.rootApi.allCategorywiseVidsForUI({tablename : 'video'}).$promise.then(function (response) {
+    Service.rootApi.allCategorywiseVidsForUI().$promise.then(function (response) {
       if (response.length) {
         $scope.getAllVidsForUI = response;
         
