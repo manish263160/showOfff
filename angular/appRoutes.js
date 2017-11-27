@@ -24,6 +24,9 @@ app.config(['$locationProvider', function ($locationProvider) {
           content: {
             templateUrl: "htmls/about.html",
             controller: 'aboutusController',
+            data: {
+              css: 'css/aboutus.css'
+            }
           },
         },
       })

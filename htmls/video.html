@@ -7,7 +7,7 @@
             <li><a ui-sref="video">Videos</a></li>
             <li><a ui-sref="aboutus">About Us</a></li>
             <li><br>
-    showofff.hello@gmail.com
+    showoff.hello@gmail.com
     <div class="social-icons">
                 <a href="https://www.facebook.com/showofff7" target="_blank" class="facebook active"><i class="icon-facebook"></i></a> 
                 <a href="https://twitter.com/showofff7" target="_blank" class="twitter active"><i class="icon-twitter"></i></a> 
@@ -107,13 +107,13 @@
                         <li ng-repeat="x in videos">
                                 <div class="video_wrapper">
                                     
-                                    <a ng-href="{{x.videoLink}}" target="_blank">
-                                        <span class="time">{{x.timeLength}}</span>
-                                        <span class="video-icon"></span>
+                                    <a>
+                                        <span class="time" ng-if="!x.isPlayer">{{x.timeLength}}</span>
+                                        <span class="video-icon" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"></span>
                                         <label style="display: none;">{{x.videoThumbnail}}</label>
-                                        <img ng-src="{{x.videoThumbnail}}" width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/> 
-                                        <!-- <ng-youtube-embed video="x.videoLink" width="720" height="405" videoid="myvideo{{x.id}}">
-                                            </ng-youtube-embed> -->
+                                         <img ng-src="{{x.videoThumbnail}}" ng-if="!x.isPlayer"  width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
+                                         <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" width="600" height="338" videoid="myvideo{{x.id}}">
+                                            </ng-youtube-embed> 
                                     </a>
                                     <div class="video-content">
                                         <h2>{{x.title}}</h2>
@@ -140,11 +140,14 @@
                         <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
                         <li ng-repeat="x in videos">
                                 <div class="video_wrapper">
-                                    <a ng-href="{{x.videoLink}}" target="_blank">
-                                            <span class="time">{{x.timeLength}}</span>
-                                        <span class="video-icon"></span>
+                                     <a>
+                                        <span class="time" ng-if="!x.isPlayer">{{x.timeLength}}</span>
+                                        <span class="video-icon" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"></span>
                                         <label style="display: none;">{{x.videoThumbnail}}</label>
-                                        <img ng-src="{{x.videoThumbnail}}" width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/> </a>
+                                         <img ng-src="{{x.videoThumbnail}}" ng-if="!x.isPlayer"  width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
+                                         <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" width="600" height="338" videoid="myvideo{{x.id}}">
+                                            </ng-youtube-embed> 
+                                    </a>
                                     <div class="video-content">
                                         <h2>{{x.title}}</h2>
                                         <div class="tooltip">
