@@ -20,7 +20,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval) {
   
   
       /* all videos from DB without category*/
-      Service.rootApi.getALlImages().$promise.then(function (response) {
+      Service.rootApi.allCategoryWiseImageForUI().$promise.then(function (response) {
         if (response.length) {
           $scope.getAllVidsForUI = response;
           $scope.videos = $scope.getAllVidsForUI.slice(0,20);
