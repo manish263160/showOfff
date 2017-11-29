@@ -145,6 +145,37 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval) {
        $scope.$on('$destroy', function() {
          $scope.stop();
        });
+
+       $scope.showShare = function(id , $event){
+        // console.log("09099090====",id);
+        $( "#share_box2"+id ).slideDown();
+        $event.stopPropagation();
+    
+      }
+      $scope.htmlclick = function(){
+        $('.share_box2').slideUp();
+      }
+
+      $scope.facebookshare=function(item){
+        // console.log("----",item)
+          FB.ui({
+          method: 'share_open_graph',
+          action_type: 'og.shares',
+          action_properties: JSON.stringify({
+          object : {
+          'og:url': "http://205.147.101.198/#/stories", // your url to share
+          'og:title': item.imageName,
+          'og:site_name':'Showofff.com',
+          'og:description':item.imageDescription,
+          'og:image': item.imageUrl,
+          'og:image:width':'200',//size of image in pixel
+          'og:image:height':'200'
+          }
+          })
+          }, function(response){
+          console.log("response is ",response);
+          });
+          }
        /* ----------------------------------------------Common jquery start for existing UI ------ */
   
        $scope.commonJquery =function(){
@@ -178,7 +209,37 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval) {
             $(this).parent().fadeOut();
           });
           
-          
+          // Search Results Up & Down
+          var li = $('.search_results li');
+          var liSelected;
+          $(window).keydown(function(e){
+            if(e.which === 40){
+              if(liSelected){
+                liSelected.removeClass('selected');
+                next = liSelected.next();
+                if(next.length > 0){
+                  liSelected = next.addClass('selected');
+                }else{
+                  liSelected = li.eq(0).addClass('selected');
+                }
+              }else{
+                liSelected = li.eq(0).addClass('selected');
+              }
+            }else if(e.which === 38){
+              if(liSelected){
+                liSelected.removeClass('selected');
+                next = liSelected.prev();
+                if(next.length > 0){
+                  liSelected = next.addClass('selected');
+                }else{
+                  liSelected = li.last().addClass('selected');
+                }
+              }else{
+                liSelected = li.last().addClass('selected');
+              }
+            }
+          });
+        
         
           // Share Toggle
           $('.share_link, .share_box').click(function(event) {

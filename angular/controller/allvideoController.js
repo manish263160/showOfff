@@ -196,7 +196,7 @@ app
   action_type: 'og.shares',
   action_properties: JSON.stringify({
   object : {
-  'og:url': "http://localhost/#/showofff", // your url to share
+  'og:url': "http://205.147.101.198/#/video", // your url to share
   'og:title': item.title,
   'og:site_name':'Showofff.com',
   'og:description':item.description,
@@ -241,18 +241,53 @@ app
         $('.category_drawer .icon-cross2').on('click', function(event){
           $(this).parent().fadeOut();
         });
-
+        
+        // Search Results Up & Down
+        var li = $('.search_results li');
+        var liSelected;
+        $(window).keydown(function(e){
+          if(e.which === 40){
+            if(liSelected){
+              liSelected.removeClass('selected');
+              next = liSelected.next();
+              if(next.length > 0){
+                liSelected = next.addClass('selected');
+              }else{
+                liSelected = li.eq(0).addClass('selected');
+              }
+            }else{
+              liSelected = li.eq(0).addClass('selected');
+            }
+          }else if(e.which === 38){
+            if(liSelected){
+              liSelected.removeClass('selected');
+              next = liSelected.prev();
+              if(next.length > 0){
+                liSelected = next.addClass('selected');
+              }else{
+                liSelected = li.last().addClass('selected');
+              }
+            }else{
+              liSelected = li.last().addClass('selected');
+            }
+          }
+        });
+      
+      
         // Share Toggle
-        $('.share_link, .share_box').click(function (event) {
-          console.log("09099090");
+        $('.share_link, .share_box').click(function(event) {
           $(this).next().slideDown();
-
-          // hide	
-          $('html').one('click', function () {
-            $('.share_box').slideUp();
-          });
+      
+        // hide	
+        $('html').one('click',function() {
+          $('.share_box').slideUp();
+        });
           event.stopPropagation();
-        }); 
+        });
+      
+      
+        
+        
         // Search Restuls
         $( "#search" ).focus(function() {
           $('.search_results').fadeIn();
