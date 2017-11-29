@@ -60,11 +60,12 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   .search{float: right; position: relative; margin-right:15px; }
   .search input[type=text]{ border: 1px #fff solid; border-radius:30px; padding:8px 35px 8px 17px; margin-top:7px; width:155px; font-size: 14px; background: #f7f7f7;}
   .search input[type=text]:focus{ outline: none; background: #f7f7f7;}
-  .search .icon-search{ position: absolute; top:8px; right:3px;font-size: 17px; color: #b7b7b7; padding: 8px; }
+  .search .icon-search{ position: absolute; top:8px; right:3px;font-size: 17px; color: #b7b7b7; padding: 8px; cursor: pointer;}
   
   .search_results, .m_search_results{display: none; position: absolute; top:43; left: 0; width:100%; border-radius:10px; box-shadow: 0 0 4px rgba(0,0,0,.2); overflow-y:scroll; height: auto; max-height:220px;}
   .search_results li a, .m_search_results li a{ display: block; background: #fff; border-bottom: 1px #eee solid; padding:0px 18px; font-size: 14px; text-decoration: none; color: #555; text-align: left;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
   .search_results li a:hover, .m_search_results li a:hover{ background: #f7f7f7;}
+  .search_results li.selected a{background: #f7f7f7; border-color:#eee;color: #222;}
   
   .lt_box{ width: 250px; float: left; padding-top: 5px;overflow-y: scroll;height: 83%;}
   .lt_box h2{ margin-bottom: 20px;}
@@ -78,7 +79,9 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   .rt_box_video .video_wrapper  a{ position: relative; float: left;}
   .rt_box_video .video_wrapper .time{ position: absolute; background:rgba(0, 0, 0, 0.80); color: #fff; bottom: 6px; right:6px; font-size: 13px; padding: 0px 8px; border-radius: 2px; }
   .rt_box_video .video_wrapper .video-icon{ background:url(../images/play-icon.png) 0 0 no-repeat; width: 70px; height: 70px; position: absolute; left: 285px; top:150px;}
-  .rt_box_video .video-content{margin-top:6px; float: left; width: 100%;}
+  .rt_box_video .video-container{ width:100%; height: auto; background: #ccc; float: left;}
+  
+  .rt_box_video .video-content{margin-top:8px; float: left; width: 100%;}
   .rt_box ul li{ position: relative; width: 100%; margin-bottom:40px;/* box-shadow: 0 0 8px #999; */float: left;}
   .rt_box ul li a.more{ background:#417EF7; color: #fff; padding: 8px 0; text-align: center; text-decoration: none; position: absolute; bottom: 0; left:0px; width: 100%; font-size: 17px;}
   .icon-menu{ display: none;}
@@ -132,17 +135,22 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
       transform: rotate(180deg);
   }
   .top_head .icon-download:before{color:#fff;}
-  .loading{position: absolute; z-index: 9; left: 50%; margin-left: -45px;margin-top: 10%;}
   
   /* Social share */
-  .share_box{ position: absolute; right:0px; background:#fff; border: 1px #eee solid; padding: 10px; z-index: 2; box-shadow:0 0 7px rgba(0,0,0,.2); border-radius:4px; margin-top: -6px; display: none;}
+  .share_box{ position: absolute; right:0px; background:#fff; border: 1px #eee solid; padding: 10px; z-index: 2; box-shadow:0 0 7px rgba(0,0,0,.2); border-radius:0px; margin-top: -6px; display: none;}
   .share_box .social-icons{ position: relative;}
   .share_box .social-icons a{ border-radius: 60px; width: 32px; height: 32px; margin:0 5px; line-height: 36px; font-size: 18px;}
-  
   .share_box .social-icons .facebook:hover{background: #4267b2; color: #fff;}
   .share_box .social-icons .twitter:hover{background: #1da1f2; color: #ffffff;}
   
+  .share_box2{ bottom:0px; padding: 13px;} 
+  .share_box2 .social-icons a{ border-radius: 60px; width:48px; height:48px; margin:0 8px; line-height: 52px; font-size: 26px;}
+  
+  
   /* Icomoon fonts */
+  .icon-pinterest:before {
+    content: "\e908";
+  }
   .icon-play:before {
     content: "\e905";
   }
@@ -169,11 +177,17 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   .icon-search:before {
     content: "\e900";
   }
+  .icon-google-plus:before {
+    content: "\ea8b";
+  }
   .icon-facebook:before {
     content: "\ea90";
   }
   .icon-instagram:before {
     content: "\ea92";
+  }
+  .icon-whatsapp:before {
+    content: "\ea93";
   }
   .icon-twitter:before {
     content: "\ea96";
@@ -184,6 +198,7 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   .icon-linkedin2:before {
     content: "\eaca";
   }
+  
   
   /* Tooltip CSS */
   .tooltip {
@@ -232,6 +247,7 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
     -moz-animation: Gradient 35s ease infinite;
     animation: Gradient 35s ease infinite;
   }
+  
   @-webkit-keyframes Gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -268,6 +284,12 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
       position: relative;
   }
   
+  /* Youtube Videos Play */
+  .yt_video{ width: 600px; height: 338px;}
+  
+  /* Loading Gif */
+  .loading-gif{position: absolute; z-index: 9; left: 50%; margin-left: -45px;margin-top: 10%;}
+  
   
   /* Mobile */
   @media (min-width: 320px) and (max-width: 767px)	{
@@ -289,9 +311,9 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
     .rt_box_video .video_wrapper .video-icon{left: 50%; top:70px; margin-left: -25px;}
     .rt_box_video .video-content{width: 96%; margin: 0 2%; padding: 8px 0 6px;}
     .rt_box_video .video_wrapper h2{width: 74%;font-size: 18px; line-height: 23px; padding-left: 4px;}
-    .icon-menu{display: block; position: absolute; padding: 10px; top:6px; cursor: pointer;left:4px; font-size: 14px; color: #868c94; -webkit-transform: rotate(180deg); opacity: 0.6;}
+    .icon-menu{display: block; position: absolute; padding: 10px; top:6px; cursor: pointer;left:4px; font-size: 14px; color: #868c94; -webkit-transform: rotate(180deg);  transform: rotate(180deg);  opacity: 0.6;}
     
-    .menu_drawer, .category_drawer{top: 0; z-index: 9999;position: fixed; width:88%; background: #fff; color: #333; text-align: center; display: table; vertical-align: middle; padding:6%; font-size: 18px; display: none; overflow: scroll;}
+    .menu_drawer, .category_drawer{top: 0; z-index: 9999;position: fixed; width:88%; background: #fff; color: #333; text-align: center; vertical-align: middle; padding:6%; font-size: 18px; display: none; overflow: scroll;}
     .menu_drawer ul li{ line-height:63px; font-size: 18px; }
     .menu_drawer a{ text-decoration: none;  font-size:22px;color: #333;}
     .menu_drawer .icon-cross, .category_drawer .icon-cross{ padding: 10px; position: absolute; top: 10px; right: 10px; cursor: pointer; color: #bbb;}
@@ -306,14 +328,16 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
     .m_search .icon-cross{ position: absolute; opacity: .3; right: 4px; top: 4px; padding: 10px; cursor: pointer;}
     
     .icon-search2{ position: absolute; right: 4px; top: 2px; color: #888b8c; padding: 10px; cursor: pointer;
-      font-size:19px; opacity: .6; cursor: pointer; display: block;}
+      font-size:19px; opacity: .6; display: block;}
     .m_search_results{ background: #fff; border-radius: 0;}
     .m_search_results li{ line-height:23px;}
-    .m_search_results li a{ font-size: 15px; padding:7px 3% !important; font-weight:400 !important; display: block; text-align: left; border:0; float: left; width:94%;border: 0px !important; }
+    .m_search_results li a{ font-size: 15px; padding:7px 3% !important; font-weight:400 !important; display: block; text-align: left; float: left; width:94%;border: 0px !important; }
     .m_search_results li a:hover{ border: 0px !important; background: #fff !important; color: #333 !important;}
     .menu_drawer .social-icons{ margin: 0px 0 20px; position: relative;}
     .menu_drawer .social-icons a{display: inline-block; width: 40px; height: 40px; text-align: center;line-height: 48px; border-radius: 50px;}
     .search_results_container {padding-left: 15px;}
+    .yt_video{ width: 100%; height: 220px;}
+  
     
   }
   
@@ -331,6 +355,8 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
     .rt_box_video{ margin: 0px;}
     .rt_box_video .video_wrapper .video-icon{left: 235px;top: 124px;}	
     .video_ht{ height: 425px;}
+    .yt_video{ width: 100%; height: 304px;}
+  
   }
   
   /* Desktop */
@@ -344,10 +370,4 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   /* Semi Large Desktop */
   @media (min-width:1152px) and (max-width: 1279px)	{
     .container{ width:1080px;}		
-  }
-  .loading_image{
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    z-index: 1000;
   }
