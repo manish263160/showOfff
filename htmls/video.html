@@ -96,7 +96,7 @@
           </div>
           
             <div class="rt_box rt_box_video">
-                <div ng-if="isLoading" class="loading_image">
+                <div ng-if="isLoading" class="loading-gif">
                     <img src="images/loading2.gif" alt="loading" >
                 </div>
                 <div ng-if="SearchResults" class="search_results_container"><strong>Search Results </strong> {{searchResultText}}</div>
@@ -113,9 +113,11 @@
                                         <span class="time" ng-if="!x.isPlayer">{{x.timeLength}}</span>
                                         <span class="video-icon" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"></span>
                                         <label style="display: none;">{{x.videoThumbnail}}</label>
+                                        <div class="video-container">
                                          <img ng-src="{{x.videoThumbnail}}" ng-if="!x.isPlayer"  width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
-                                         <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" width="600" height="338" videoid="myvideo{{x.id}}">
+                                         <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" class="yt_video" videoid="myvideo{{x.id}}">
                                             </ng-youtube-embed> 
+                                        </div>
                                     </a>
                                     <div class="video-content">
                                         <h2>{{x.title}}</h2>
@@ -165,9 +167,11 @@
                                         <span class="time" ng-if="!x.isPlayer">{{x.timeLength}}</span>
                                         <span class="video-icon" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"></span>
                                         <label style="display: none;">{{x.videoThumbnail}}</label>
+                                        <div class="video-container">
                                          <img ng-src="{{x.videoThumbnail}}" ng-if="!x.isPlayer"  width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
-                                         <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" width="600" height="338" videoid="myvideo{{x.id}}">
+                                         <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" class="yt_video" videoid="myvideo{{x.id}}">
                                             </ng-youtube-embed> 
+                                            </div>
                                     </a>
                                     <div class="video-content">
                                         <h2>{{x.title}}</h2>
