@@ -1,4 +1,4 @@
-var app = angular.module('app',['UIConfig' , 'ui.router', 'uiRouterStyles',
+var app = angular.module('app',['UIConfig' , 'ui.router', 'uiRouterStyles','720kb.socialshare',
 'ngResource', 'infinite-scroll', 'ngYoutubeEmbed' , 'anguvideo'
 
 ]);

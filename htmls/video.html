@@ -1,4 +1,6 @@
+
 <!-- Menu Drawer start -->
+<div ng-click="htmlclick()">
 <div class="menu_drawer">
     <span class="icon-cross"></span>
     <br>
@@ -78,7 +80,7 @@
             <div class="lt_box" id="leftsidebar2">
                 <ul>
                     <li>
-                        <a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all'  ? 'active' : ''">All Videos</a>
+                        <a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all'  ? 'active' : ''">Latest Videos</a>
                     </li>
                    <!--  <li>
                             <a href="javascript:void(0)" ng-click="getAllWebSeries()"  ng-class="activeCat === 'webseries'  ? 'active' : ''">Web Series</a>
@@ -117,12 +119,31 @@
                                     </a>
                                     <div class="video-content">
                                         <h2>{{x.title}}</h2>
-                                        <div class="tooltip">
-                                            <i class="tooltiptext">Share</i>
-                                            <a href="javascript:void(0)" class="video-share">
-                                                <span class="icon-share"></span>
-                                            </a>
+                                         <div class="tooltip share_link" ng-click="showShare($index , $event);">
+                                                <i class="tooltiptext">Share</i>
+                                                <a href="javascript:void(0)" class="video-share">
+                                                    <span class="icon-share"></span>
+                                                </a>
+                                            </div>
+                                        <!-- Social Share start -->
+                                    <div class="share_box" id="share_box{{$index}}">
+                                            <div class="social-icons">
+                                <a href="#" class="facebook" ng-click="facebookshare(x)" >
+                                <i class="icon-facebook"></i>
+                                </a>
+                            
+                                                <a href="#"
+                                                socialshare
+                                                socialshare-provider="twitter"
+                                                socialshare-text="{{x.title}}"
+                                                socialshare-hashtags="#{{x.title}}"
+                                                socialshare-url="http://205.147.101.198/#/video"
+                                                target="_blank" class="twitter">
+                                                    <i class="icon-twitter"></i>
+                                                </a>
+                                            </div>
                                         </div>
+                                        <!-- Social Share end /-->
                                         <div class="tooltip">
                                             <i class="tooltiptext">Download</i>
                                             <a href="javascript:void(0)" class="video-dowload">
@@ -150,12 +171,40 @@
                                     </a>
                                     <div class="video-content">
                                         <h2>{{x.title}}</h2>
-                                        <div class="tooltip">
+                                        <!-- <div class="tooltip">
                                             <i class="tooltiptext">Share</i>
-                                            <a href="javascript:void(0)" class="video-share">
+                                             <a href="javascript:void(0)" class="video-share"> 
+                                                    <a href="#" class="video-share" socialshare socialshare-provider="twitter" socialshare-text="720kb AngularJS Socialshare"
+                                                    socialshare-hashtags="angularjs, angular-socialshare" socialshare-url="http://720kb.net">
                                                 <span class="icon-share"></span>
                                             </a>
+                                        </div> -->
+                                        <div class="tooltip share_link" ng-click="showShare($index , $event);">
+                                                <i class="tooltiptext">Share</i>
+                                                <a href="javascript:void(0)" class="video-share">
+                                                    <span class="icon-share"></span>
+                                                </a>
+                                            </div>
+                                        <!-- Social Share start -->
+                                    <div class="share_box" id="share_box{{$index}}">
+                                            <div class="social-icons">
+                                                    <a href="#" class="facebook" ng-click="facebookshare(x)" >
+                                                            <i class="icon-facebook"></i>
+                                                            </a>
+                                                        
+                                                            <a href="#"
+                                                            socialshare
+                                                            socialshare-provider="twitter"
+                                                            socialshare-text="{{x.title}}"
+                                                            socialshare-hashtags="#{{x.title}}"
+                                                            socialshare-url="http://205.147.101.198/#/video"
+                                                            target="_blank" class="twitter">
+                                                                <i class="icon-twitter"></i>
+                                                            </a>
+                                                            
+                                            </div>
                                         </div>
+                                        <!-- Social Share end /-->
                                         <div class="tooltip">
                                             <i class="tooltiptext">Download</i>
                                             <a href="javascript:void(0)" class="video-dowload">
@@ -173,6 +222,6 @@
         
     </section>
     <!--/ Stories container end -->
-    
-    
-    
+    </div>
+  
+   

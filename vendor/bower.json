@@ -41,6 +41,7 @@
     "bootstrap-ui-datetime-picker": "^2.6.0",
     "angular-ui-bootstrap": "^2.5.1",
     "ng-youtube-embed": "^1.7.11",
-    "angular-ui-router-styles": "^1.1.0"
+    "angular-ui-router-styles": "^1.1.0",
+    "angular-socialshare": "angularjs-socialshare#^2.3.11"
   }
 }

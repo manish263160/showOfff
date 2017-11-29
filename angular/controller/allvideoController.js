@@ -178,96 +178,138 @@ app
   $scope.$on('$destroy', function() {
     $scope.stop();
   });
+
+  $scope.showShare = function(id , $event){
+    // console.log("09099090====",id);
+    $( "#share_box"+id ).slideDown();
+    $event.stopPropagation();
+
+  }
+  $scope.htmlclick = function(){
+    $('.share_box').slideUp();
+  }
+
+  $scope.facebookshare=function(item){
+// console.log("----",item)
+  FB.ui({
+  method: 'share_open_graph',
+  action_type: 'og.shares',
+  action_properties: JSON.stringify({
+  object : {
+  'og:url': "http://localhost/#/showofff", // your url to share
+  'og:title': item.title,
+  'og:site_name':'Showofff.com',
+  'og:description':item.description,
+  'og:image': item.videoThumbnail,
+  'og:image:width':'200',//size of image in pixel
+  'og:image:height':'200'
+  }
+  })
+  }, function(response){
+  console.log("response is ",response);
+  });
+  }
      /* ----------------------------------------------Common jquery start for existing UI ------ */
 
-     $scope.commonJquery =function(){// Vertical Scroll TOP
-      $(function () {
-                 $('#head_top').bind("click", function () {
-                     $('html, body').animate({ scrollTop: 0 }, 500);
-                     return false;
-                 });
-             });
-     
-     
-     $(document).ready(function(e) {
-         
-       // Menu Drawer
-       $('.icon-menu').on('click', function(event){
-         $('.menu_drawer').fadeIn();
-       });
-       
-       $('.menu_drawer .icon-cross').on('click', function(event){
-         $(this).parent().fadeOut();
-       });
-       
-       
-       // Mobile Category Drawer
-       $('.m_category').on('click', function(event){
-         $('.category_drawer').fadeIn();
-       });
-       
-       $('.category_drawer .icon-cross2').on('click', function(event){
-         $(this).parent().fadeOut();
-       });
-       
-       
-       // Search Restuls
-       $( "#search" ).focus(function() {
-         $('.search_results').fadeIn();
-       });
-       
-       $( "#search" ).blur(function() {
-         $('.search_results').fadeOut();
-       });
-       
-     
-       // Scroll Top
-         $(window).bind('scroll', function () {
-           if ($(window).scrollTop() >1500) {
-             $('.top_head a').fadeIn(400);
-             } else {
-             $('.top_head a').fadeOut(400);
-           }
-       });
-       
-     
-       // Mobile Search Restuls
-       $( ".icon-search2" ).on('click', function(event){
-         $('.m_search').fadeIn();
-       });
-       
-       $( ".m_search .icon-cross" ).on('click', function(event){
-         $('.m_search').fadeOut();
-       });
-       
-       $( "#m_search" ).focus(function() {
-         $('.m_search_results').fadeIn();
-       });
-       
-       $( "#m_search" ).blur(function() {
-         $('.m_search_results').fadeOut();
-       });
-       
-       
-       $.stickysidebarscroll("#leftsidebar2",{offset: {top: 60, bottom:80}});
-       
-       
-       
-       // Set height of banner
-       function setDivHeight() {
-         //height of HTML document
-         var documentHeight = $(document).height();
-         //height of browser viewport
-         var viewportHeight = $(window).height();
-         $('.category_drawer').height(viewportHeight); // OR viewportHeight - 180 as appropriate
-         $('.menu_drawer').height(viewportHeight); // OR viewportHeight - 180 as appropriate
-       }
-       // = onload and onresize
-       $(window).on("load resize", setDivHeight);
-     
-       
-     
-     });
+     $scope.commonJquery =function(){
+      // Vertical Scroll TOP
+       $(function () {
+                  $('#head_top').bind("click", function () {
+                      $('html, body').animate({ scrollTop: 0 }, 500);
+                      return false;
+                  });
+              });
+      
+      
+      $(document).ready(function(e) {
+          
+        // Menu Drawer
+        $('.icon-menu').on('click', function(event){
+          $('.menu_drawer').fadeIn();
+        });
+        
+        $('.menu_drawer .icon-cross').on('click', function(event){
+          $(this).parent().fadeOut();
+        });
+        
+        
+        // Mobile Category Drawer
+        $('.m_category').on('click', function(event){
+          $('.category_drawer').fadeIn();
+        });
+        
+        $('.category_drawer .icon-cross2').on('click', function(event){
+          $(this).parent().fadeOut();
+        });
+
+        // Share Toggle
+        $('.share_link, .share_box').click(function (event) {
+          console.log("09099090");
+          $(this).next().slideDown();
+
+          // hide	
+          $('html').one('click', function () {
+            $('.share_box').slideUp();
+          });
+          event.stopPropagation();
+        }); 
+        // Search Restuls
+        $( "#search" ).focus(function() {
+          $('.search_results').fadeIn();
+        });
+        
+        $( "#search" ).blur(function() {
+          $('.search_results').fadeOut();
+        });
+        
+      
+        // Scroll Top
+          $(window).bind('scroll', function () {
+            if ($(window).scrollTop() >1500) {
+              $('.top_head a').fadeIn(400);
+              } else {
+              $('.top_head a').fadeOut(400);
+            }
+        });
+        
+      
+        // Mobile Search Restuls
+        $( ".icon-search2" ).on('click', function(event){
+          $('.m_search').fadeIn();
+        });
+        
+        $( ".m_search .icon-cross" ).on('click', function(event){
+          $('.m_search').fadeOut();
+        });
+        
+        $( "#m_search" ).focus(function() {
+          $('.m_search_results').fadeIn();
+        });
+        
+        $( "#m_search" ).blur(function() {
+          $('.m_search_results').fadeOut();
+        });
+        
+        
+        $.stickysidebarscroll("#leftsidebar2",{offset: {top: 60, bottom:80}});
+        
+        
+        
+        // Set height of banner
+        function setDivHeight() {
+          //height of HTML document
+          var documentHeight = $(document).height();
+          //height of browser viewport
+          var viewportHeight = $(window).height();
+          $('.category_drawer').height(viewportHeight); // OR viewportHeight - 180 as appropriate
+          $('.menu_drawer').height(viewportHeight); // OR viewportHeight - 180 as appropriate
+        }
+        // = onload and onresize
+        $(window).on("load resize", setDivHeight);
+      
+        
+      
+      });
     }
 
     $scope.commonJquery();

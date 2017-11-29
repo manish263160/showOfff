@@ -66,7 +66,7 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   .search_results li a, .m_search_results li a{ display: block; background: #fff; border-bottom: 1px #eee solid; padding:0px 18px; font-size: 14px; text-decoration: none; color: #555; text-align: left;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
   .search_results li a:hover, .m_search_results li a:hover{ background: #f7f7f7;}
   
-  .lt_box{ width: 250px; float: left; padding-top: 5px;/* overflow-y: scroll;height: 83%; */}
+  .lt_box{ width: 250px; float: left; padding-top: 5px;overflow-y: scroll;height: 83%;}
   .lt_box h2{ margin-bottom: 20px;}
   .lt_box ul li{ display: block; margin-bottom:6px;}
   .lt_box ul li a{ font-size: 14px; border-radius: 50px; background:#fff; color: #1C2324; padding:4px 18px 4px; text-decoration: none; display: inline-block;}
@@ -80,7 +80,7 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   .rt_box_video .video_wrapper .video-icon{ background:url(../images/play-icon.png) 0 0 no-repeat; width: 70px; height: 70px; position: absolute; left: 285px; top:150px;}
   .rt_box_video .video-content{margin-top:6px; float: left; width: 100%;}
   .rt_box ul li{ position: relative; width: 100%; margin-bottom:40px;/* box-shadow: 0 0 8px #999; */float: left;}
-  .rt_box ul li a.more{ background:#417EF7; color: #fff; padding: 8px 0; text-align: center; text-decoration: none; position: absolute; bottom: 0; left: 1px; width: 100%; font-size: 17px;}
+  .rt_box ul li a.more{ background:#417EF7; color: #fff; padding: 8px 0; text-align: center; text-decoration: none; position: absolute; bottom: 0; left:0px; width: 100%; font-size: 17px;}
   .icon-menu{ display: none;}
   .clear{clear: both;}
   .last_box{ width: 200px; margin-left:40px; float: right; line-height: 28px; background: #fff; border: 1px #ddd so; border-radius: 3px; padding:10px 15px;}
@@ -99,7 +99,7 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   
   */
   
-  .rt_box ul li a.video-share, .rt_box ul li a.video-dowload{ float: right;margin-left:8px; border: 1px #8a939a solid; border-radius:50px;  text-decoration: none; width:32px; height:32px; text-align: center; line-height: 36px;color: #8a939a;  }
+  .rt_box ul li a.video-share, .rt_box ul li a.video-dowload{ float: right;margin-left:8px; border: 1px #ff2824 solid; border-radius:50px;  text-decoration: none; width:32px; height:32px; text-align: center; line-height: 36px;color: #ff2824;  }
   .rt_box ul li a.video-dowload{ line-height: 38px;}
   .rt_box ul li a.video-share:hover, .rt_box ul li a.video-dowload:hover{ background: #FF2824;border: 1px #FF2824 solid;  color: #fff;}
   .rt_box ul li a.video-share:hover .icon-share:before, .rt_box ul li a.video-dowload:hover .icon-download:before{ color: #fff;}
@@ -132,6 +132,15 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
       transform: rotate(180deg);
   }
   .top_head .icon-download:before{color:#fff;}
+  .loading{position: absolute; z-index: 9; left: 50%; margin-left: -45px;margin-top: 10%;}
+  
+  /* Social share */
+  .share_box{ position: absolute; right:0px; background:#fff; border: 1px #eee solid; padding: 10px; z-index: 2; box-shadow:0 0 7px rgba(0,0,0,.2); border-radius:4px; margin-top: -6px; display: none;}
+  .share_box .social-icons{ position: relative;}
+  .share_box .social-icons a{ border-radius: 60px; width: 32px; height: 32px; margin:0 5px; line-height: 36px; font-size: 18px;}
+  
+  .share_box .social-icons .facebook:hover{background: #4267b2; color: #fff;}
+  .share_box .social-icons .twitter:hover{background: #1da1f2; color: #ffffff;}
   
   /* Icomoon fonts */
   .icon-play:before {
@@ -148,11 +157,11 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   }
   .icon-download:before {
     content: "\e902";
-    color: #959eaa;
+    color: #ff2824;
   }
   .icon-share:before {
     content: "\e903";
-    color: #959eaa;
+    color: #ff2824;
   }
   .icon-cross:before {
     content: "\e901";

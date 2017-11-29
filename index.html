@@ -1,8 +1,13 @@
 <!doctype html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
   <head>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <meta charset="UTF-8">
+    <meta property="og:url" content="Your website URL"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Title for showing on facebook"/>
+    <meta property="og:image" content="Image url for display"/>
+    <meta property="og:description" content="Description about your website"/>
     <title>Showofff: Videos, Memes, Quotes, Stories</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -41,6 +46,10 @@
 <script src="vendor/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
 <script src="vendor/bower_components/ng-youtube-embed/build/ng-youtube-embed.min.js"></script>
 <script src="vendor/angular-video/js/anguvideo.js"></script>
+<script src="vendor/bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
+
+
+
 <!-- component app js -->
 <script src="angular/app.js"></script>
 <script src="angular/UIConfig.js"></script>
@@ -72,6 +81,24 @@
 
   ga('create', 'UA-49391184-1', 'auto');
   ga('send', 'pageview');
-  </script>
+  
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '177903832632146',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.7'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
   </html>
   
