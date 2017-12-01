@@ -8,6 +8,13 @@
     <meta property="og:title" content="Title for showing on facebook"/>
     <meta property="og:image" content="Image url for display"/>
     <meta property="og:description" content="Description about your website"/>
+
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:url" content="http://205.147.101.198/#/video"/>
+    <meta name="twitter:title" content="Special Achievement Award Manushi Chhillar | Indian Of The Year 2017 | Miss World 2017"/>
+    <meta name="twitter:description" content="Show Off"/>
+    <meta name="twitter:image" content="http://205.147.101.198:8080/ImageVideoApp/static/UPLOAD_IMAGES/3/uploadedVideo/2017-12-01_08-39-51manushi.jpg" />
+
     <title>Showofff: Videos, Memes, Quotes, Stories</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -47,8 +54,7 @@
 <script src="vendor/bower_components/ng-youtube-embed/build/ng-youtube-embed.min.js"></script>
 <script src="vendor/angular-video/js/anguvideo.js"></script>
 <script src="vendor/bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
-
-
+<script src="vendor/bower_components/angular-update-meta/dist/update-meta.min.js"></script>
 
 <!-- component app js -->
 <script src="angular/app.js"></script>
@@ -58,7 +64,7 @@
 <script src="angular/controller/allvideoController.js"></script>
 <script src="angular/controller/storiesController.js"></script>
 <script src="angular/controller/aboutusController.js"></script>
-
+<script src="angular/controller/renderedVideoController.js"></script>
 <!-- <script src="angular/services/lazyloading.js"></script> -->
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -99,6 +105,19 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- this is the script of the twitter -->
+<script>
+  window.twttr = (function (d,s,id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+    js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+ 
+twttr.ready(function (twttr) {
+    twttr.events.bind('tweet', reward_user);
+});
 </script>
   </html>
   
