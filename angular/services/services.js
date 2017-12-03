@@ -98,6 +98,18 @@ app.factory('Service', function ($resource, $rootScope, UIConfig) {
         method: 'GET',
         isArray: true,
         transformResponse: defaultTransformResponse
+      },
+      getSpecificVids:{
+        url: rootURL + '/restTempletForWeb/getSpecificVids',
+        method: 'GET',
+        isArray: true,
+        transformResponse: defaultTransformResponse
+      },
+      getSpecificImage:{
+        url: rootURL + '/restTempletForWeb/getSpecificImage',
+        method: 'GET',
+        isArray: true,
+        transformResponse: defaultTransformResponse
       }
 
 

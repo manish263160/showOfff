@@ -4,8 +4,18 @@ app.config(['$locationProvider', function ($locationProvider) {
   
   app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when("", "/video");
-    
+    $urlRouterProvider.otherwise('/404')
     $stateProvider
+
+    .state('404', {
+      url: "/404",
+      views: {
+        content: {
+          templateUrl: "htmls/error.html",
+          // controller: 'videoController'
+        },
+      },
+    })
       .state('video', {
         url: "/video",
         views: {
@@ -39,6 +49,24 @@ app.config(['$locationProvider', function ($locationProvider) {
           },
         },
       })
+      .state('specificVideo', {
+        url: "/specificVideo/:id",
+        views: {
+          content: {
+            templateUrl: "htmls/specificVideo.html",
+            controller: 'specificVideoController',
+          },
+        },
+      })
+      .state('specificStory', {
+        url: "/specificStory/:id",
+        views: {
+          content: {
+            templateUrl: "htmls/specificStory.html",
+            controller: 'renderedStoryController',
+          },
+        },
+      })      
      /* .state('faq', {
         url: "/faq",
         views: {

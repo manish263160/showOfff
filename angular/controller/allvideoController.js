@@ -1,7 +1,9 @@
 app
   .controller("videoController",
-  function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval) {
+  function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval , UIConfig) {
 
+    var appDomain= UIConfig.app_domain;
+    $scope.appDomain =appDomain;
     $scope.videos = [];
     $scope.allvideoCategoryName = [];
     $scope.getAllVidsForUI =[];
@@ -196,7 +198,7 @@ app
   action_type: 'og.shares',
   action_properties: JSON.stringify({
   object : {
-  'og:url': "http://205.147.101.198/#/video", // your url to share
+  'og:url': appDomain+'specificVideo/'+item.id, // your url to share
   'og:title': item.title,
   'og:site_name':'Showofff.com',
   'og:description':item.description,

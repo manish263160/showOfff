@@ -114,13 +114,13 @@
                                         <span class="video-icon" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"></span>
                                         <label style="display: none;">{{x.videoThumbnail}}</label>
                                         <div class="video-container">
-                                         <img ng-src="{{x.videoThumbnail}}" ng-if="!x.isPlayer"  width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
+                                         <img ng-src="{{x.videoThumbnail}}" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"  width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
                                          <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" class="yt_video" videoid="myvideo{{x.id}}">
                                             </ng-youtube-embed> 
                                         </div>
                                     </a>
                                     <div class="video-content">
-                                        <h2>{{x.title}}</h2>
+                                        <h2><a ui-sref="specificVideo({id:{{x.id}}})" ui-sref-opts="{reload: true, inherit: false, notify: true }">{{x.title}}</a></h2>
                                          <div class="tooltip share_link" ng-click="showShare($index , $event);">
                                                 <i class="tooltiptext">Share</i>
                                                 <a href="javascript:void(0)" class="video-share">
@@ -134,14 +134,15 @@
                                 <i class="icon-facebook"></i>
                                 </a>
                             
+                                                
                                                 <a href="#"
                                                 socialshare
                                                 socialshare-provider="twitter"
-                                                socialshare-url="{{x.videoThumbnail}}"
                                                 socialshare-text="{{x.title}}"
+                                                socialshare-url="{{appDomain}}specificVideo/{{x.id}}"
                                                 socialshare-hashtags="{{x.title}}"
-                                                 class="twitter">
-                                                    <i class="icon-twitter"></i>
+                                                class="twitter">
+                                                   <i class="icon-twitter"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -168,13 +169,13 @@
                                         <span class="video-icon" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"></span>
                                         <label style="display: none;">{{x.videoThumbnail}}</label>
                                         <div class="video-container">
-                                         <img ng-src="{{x.videoThumbnail}}" ng-if="!x.isPlayer"  width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
+                                         <img ng-src="{{x.videoThumbnail}}" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"  width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
                                          <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" class="yt_video" videoid="myvideo{{x.id}}">
                                             </ng-youtube-embed> 
                                             </div>
                                     </a>
                                     <div class="video-content">
-                                        <h2>{{x.title}}</h2>
+                                        <h2><a ui-sref="specificVideo({id:{{x.id}}})">{{x.title}}</a></h2>
                                         <!-- <div class="tooltip">
                                             <i class="tooltiptext">Share</i>
                                              <a href="javascript:void(0)" class="video-share"> 
@@ -200,10 +201,10 @@
                                                             socialshare
                                                             socialshare-provider="twitter"
                                                             socialshare-text="{{x.title}}"
-                                                            socialshare-hashtags="#{{x.title}}"
-                                                            socialshare-url="{{x.videoThumbnail}}"
-                                                             class="twitter">
-                                                                <i class="icon-twitter"></i>
+                                                            socialshare-url="{{appDomain}}specificVideo/{{x.id}}"
+                                                            socialshare-hashtags="{{x.title}}"
+                                                            class="twitter">
+                                                               <i class="icon-twitter"></i>
                                                             </a>
                                                             
                                             </div>

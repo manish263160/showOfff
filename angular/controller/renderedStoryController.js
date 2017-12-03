@@ -1,8 +1,11 @@
 app
-.controller("storiesController",
-function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UIConfig) {
+.controller("renderedStoryController",
+function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$interval , UIConfig) {
+  
       var appDomain= UIConfig.app_domain;
       $scope.appDomain =appDomain;
+      var imgId = $stateParams.id;
+      console.log("imgId====",imgId);
       $scope.videos = [];
       $scope.allvideoCategoryName = [];
       $scope.getAllVidsForUI =[];
@@ -21,11 +24,12 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
   
   
       /* all videos from DB without category*/
-      Service.rootApi.allCategoryWiseImageForUI().$promise.then(function (response) {
+      Service.rootApi.getSpecificImage({id : imgId}).$promise.then(function (response) {
+        console.log("====response=====",response);
         if (response.length) {
           $scope.getAllVidsForUI = response;
           $scope.videos = $scope.getAllVidsForUI.slice(0,20);
-          console.log("$scope.image===" + $scope.videos.length);   
+        //   console.log("$scope.image===" + $scope.videos.length);   
         }
       })
   

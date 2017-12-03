@@ -1,0 +1,195 @@
+
+<update-title title="Specific Story"></update-title>
+<update-meta name="twitter:card" content="summary"/>
+<update-meta name="twitter:url" content="{{appDomain}}specificStory/{{videos[0].id}}"/>
+<update-meta name="twitter:title" content="{{videos[0].imageDescription}}"/>
+<update-meta name="twitter:description" content="{{videos[0].imageDescription}}"/>
+<update-meta name="twitter:image" content="{{videos[0].imageUrl}}" />
+<!-- Menu Drawer start -->
+<div ng-click="htmlclick()">
+    <div class="menu_drawer">
+    <span class="icon-cross"></span>
+    <br>
+        <ul>
+            <li><a ui-sref="stories">Stories</a></li>
+            <li><a ui-sref="video">Videos</a></li>
+            <li><a ui-sref="aboutus">About Us</a></li>
+            <li><br>
+    showoff.hello@gmail.com
+    <div class="social-icons">
+                <a href="https://www.facebook.com/showofff7" target="_blank" class="facebook active"><i class="icon-facebook"></i></a> 
+                <a href="https://twitter.com/showofff7" target="_blank" class="twitter active"><i class="icon-twitter"></i></a> 
+                <a href="https://instagram.com/showofff7" target="_blank" class="instagram active"><i class="icon-instagram"></i></a> 
+                <a href="https://www.youtube.com/channel/UCuqDR9bUwIaE7nxZwqbobaQ" target="_blank" class="youtube active"><i class="icon-youtube"></i></a>
+                </div>
+                <a href="https://goo.gl/MF7YuQ" target="_blank"><img src="images/google-play2.jpg" width="165" alt=""/></a></li>
+        </ul>	
+    </div>
+    <!--/ Menu Drawer end -->
+    
+    
+    <!-- Mobile category Drawer start -->
+    <div class="m_category">Category</div>
+    <div class="category_drawer"><span class="icon-cross icon-cross2"></span>
+    <br>
+    <h3>Choose Category</h3>
+    <br>
+        <ul>
+                <li ng-repeat="item in allvideoCategoryName"><a href="#">{{item.name}}</a></li>
+            <!-- <li><a href="#">Memes</a></li>
+            <li><a href="#">Quotes</a></li>
+            <li><a href="#">News</a></li> -->
+        </ul></div>
+    <!--/ Mobile category Drawer end -->
+        
+    <!-- Navigation Start -->
+    <div class="navigation">
+            <div class="container">
+            <div class="col1"><a ui-sref="aboutus" class="m_none"><img src="images/logo.png" width="116" height="36" alt="" class="left"/></a> </div>
+            <div class="col2 links">
+                <span class="icon-menu"></span>
+                <a ui-sref="video" >
+                    <span class="icon-video"></span> VIDEOS</a> &nbsp;
+                <a ui-sref="stories" class="active">
+                    <span class="icon-stories"></span> STORIES</a>
+                <span class="icon-search icon-search2"></span>
+                <div class="m_search">
+                    <input type="text" placeholder="Search Stories.." ng-model="m_searchtxt" ng-change="getSearchData(m_searchtxt)" id="m_search">
+                    <span class="icon-cross"></span>
+                </div>
+                <ul class="m_search_results">
+                <li ng-repeat="searchitem in searcheVideoData">
+                    <a href="javascript:void(0)" ng-click="setGlobalVideoVariable(m_searchtxt)">{{searchitem.title}}</a>
+                </li>
+                </ul>
+    </div>
+    
+    <div class="col1">
+            <a href="https://goo.gl/MF7YuQ" target="_blank" class="m_none t_none">
+                <img src="images/google-play.png" width="117" height="35" alt="" class="right" />
+            </a>
+            <!-- this feature will introduce in future. -->
+            <!-- <div class="search">
+                <input type="text" id="search" ng-model="searchtxt" ng-change="getSearchData(searchtxt)" placeholder="Search Stories..">
+                <span class="icon-search" ng-click="getSearchClick(searchtxt)"></span>
+                <ul class="search_results">
+                    <li ng-repeat="searchitem in searcheVideoData">
+                        <a href="javascript:void(0)" ng-click="searchedDropDownDataOnClick(searchitem)">{{searchitem.title}}</a>
+                    </li>
+                    <li ng-if="searcheVideoData.length <=0"><a>Nothing Found</a></li>
+                   
+                </ul>
+        </div> -->
+        </div>
+     </div>
+    </div>
+    <!--/ Navigation end -->
+    
+    <!-- Stories container start -->
+    <section class="wrapper">
+        <div class="container">
+        <!-- Left Box start -->
+            <div class="lt_box" id="leftsidebar2">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" ng-click="goTocategory()" ng-class="activeCat === 'all'  ? 'active' : ''">Latest Stories</a>
+                    </li>
+                    <li ng-repeat="item in allvideoCategoryName">
+                        <a href="javascript:void(0)" ng-click="goTocategory(item)" ng-class="activeCat === item.id ? 'active' : ''">{{item.name}}</a>
+                    </li>
+                </ul>
+                <br>
+            <br>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/showofff7" target="_blank" class="facebook active"><i class="icon-facebook"></i></a><a href="https://twitter.com/showofff7" target="_blank" class="twitter active"><i class="icon-twitter"></i></a><a href="https://instagram.com/showofff7" target="_blank" class="instagram active"><i class="icon-instagram"></i></a><a href="https://www.youtube.com/channel/UCuqDR9bUwIaE7nxZwqbobaQ" target="_blank" class="youtube active"><i class="icon-youtube"></i></a>
+                </div> 
+          </div>
+        <!--/ Left Box end -->
+    
+    
+        <!-- Right Box start -->
+        <div class="rt_box">
+                <div ng-if="isLoading" class="loading-gif">
+                        <img src="images/loading2.gif" alt="loading" >
+                    </div>
+                    <div ng-if="SearchResults" class="search_results_container"><strong>Search Results </strong> {{searchResultText}}</div>
+                    <div ng-if="nothingFound" class="search_results_container">Nothing Found For {{searchResultText}}</div>
+                <ul  infinite-scroll='loadData()'
+                infinite-scroll-use-document-bottom ='true'
+                infinite-scroll-distance='2' infinite-scroll-disabled='disabled' ng-if="!fromSearch">
+                        <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
+                        <li ng-repeat="x in videos">
+                                <a ui-sref="specificStory({id:{{x.id}}})"> <img ng-src="{{x.imageUrl}}"  onerror="this.src='http://via.placeholder.com/720x1163';" width="720" height="1163" alt=""/>
+                                </a>
+                                <a href="{{x.imageLink}}" ng-if="x.imageLink" target="_blank" class="more"> Read More  </a>
+                                
+                                <span class="share_btn share_link" ng-click="showShare($index , $event);">
+                                    <a href="javascript:void(0)">
+                                        <div class="tooltip">
+                                            <i class="tooltiptext">Share</i>
+                                            <i class="icon-share"></i>
+                                        </div>
+                                    </a>
+                                </span>
+                                <!-- Social Share start -->
+                                <div class="share_box share_box2" id="share_box2{{$index}}">
+                                    <div class="social-icons">
+                                        <a href="#"  class="facebook" ng-click="facebookshare(x)">
+                                            <i class="icon-facebook"></i>
+                                        </a>
+                                        <a href="#"
+                                        socialshare
+                                        socialshare-provider="twitter"
+                                        socialshare-url="{{x.imageUrl}}"
+                                        socialshare-text="{{x.imageDescription}}"
+                                        socialshare-hashtags="{{x.imageName}}"
+                                         class="twitter">
+                                            <i class="icon-twitter"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Social Share end /-->
+                            </li>
+                </ul>
+    
+                <ul   ng-if="fromSearch">
+                                <li ng-repeat="x in videos">
+                                    <img ng-src="{{x.imageUrl}}"  onerror="this.src='http://via.placeholder.com/720x1163';" width="720" height="1163" alt=""/>
+                                    <a href="{{x.imageLink}}" ng-if="x.imageLink" target="_blank" class="more"> Read More </a>
+                                    
+                                        
+                                    <span class="share_btn share_link" ng-click="showShare($index , $event);">
+                                        <a href="javascript:void(0)">
+                                            <div class="tooltip">
+                                                <i class="tooltiptext">Share</i>
+                                                <i class="icon-share"></i>
+                                            </div>
+                                        </a>
+                                    </span>
+                                    <!-- Social Share start -->
+                                    <div class="share_box share_box2" id="share_box2{{$index}}">
+                                        <div class="social-icons">
+                                            <a href="https://www.facebook.com/showofff7" target="_blank" class="facebook">
+                                                <i class="icon-facebook"></i>
+                                            </a>
+                                            <a href="#"
+                                            socialshare
+                                            socialshare-provider="twitter"
+                                            socialshare-url="{{x.imageUrl}}"
+                                            socialshare-text="{{x.imageDescription}}"
+                                            socialshare-hashtags="{{x.imageName}}"
+                                             class="twitter">
+                                                <i class="icon-twitter"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Social Share end /-->
+                                    </li>
+                    </ul>
+            </div>
+        <!--/ Right Box end -->
+        </div>
+    </section>
+    <!--/ Stories container end -->
+    
+    </div>
