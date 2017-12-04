@@ -29,12 +29,12 @@ showoff.hello@gmail.com
 <br>
 <h3>Choose Category</h3>
 <br>
-	<ul>
-			<li ng-repeat="item in allvideoCategoryName"><a href="#">{{item.name}}</a></li>
-		<!-- <li><a href="#">Memes</a></li>
-		<li><a href="#">Quotes</a></li>
-		<li><a href="#">News</a></li> -->
-	</ul></div>
+<ul>
+	<li><a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all'  ? 'active' : ''">Latest Stories</a></li>
+<li ng-repeat="item in allvideoCategoryName">
+		<a href="javascript:void(0)" ng-click="goTocategory(item)" ng-class="activeCat === item.id ? 'active' : ''">{{item.name}}</a>
+	</li>
+</ul></div>
 <!--/ Mobile category Drawer end -->
 	
 <!-- Navigation Start -->
