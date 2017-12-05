@@ -202,7 +202,7 @@ action_type: 'og.shares',
 action_properties: JSON.stringify({
 object : {
   'og:url': appDomain+'specificVideo/'+item.id, // your url to share
-  'og:title': item.title,
+  'og:title': item.imageDescription ? item.imageDescription : 'Shared Image',
   'og:site_name':'Showofff.com',
   'og:description':item.description,
   'og:image': item.videoThumbnail,

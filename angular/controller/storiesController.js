@@ -165,7 +165,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
           action_properties: JSON.stringify({
           object : {
           'og:url': appDomain+'specificStory/'+item.id, // your url to share
-          'og:title': item.imageUrl,
+          'og:title': item.imageDescription ? item.imageDescription : 'Shared Image',
           'og:site_name':'Showofff.com',
           'og:description':item.imageDescription,
           'og:image': item.imageUrl,
