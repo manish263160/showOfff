@@ -54,11 +54,11 @@
         <span class="icon-search icon-search2"></span>
         <div class="m_search">
             <input type="text" placeholder="Search Videos.." ng-model="m_searchtxt" ng-change="getSearchData(m_searchtxt)" id="m_search">
-            <span class="icon-cross"></span>
+            <span class="icon-cross"  ng-click="getSearchClick(m_searchtxt)"></span>
         </div>
         <ul class="m_search_results">
-        <li ng-repeat="searchitem in searcheVideoData">
-            <a href="javascript:void(0)" ng-click="setGlobalVideoVariable(m_searchtxt)">{{searchitem.title}}</a>
+        <li ng-repeat="searchitem in searcheVideoData" ng-if="searcheVideoData.length > 0">
+            <a href="javascript:void(0)" ng-click="searchedDropDownDataOnClick(searchitem)"> {{searchitem.title}}</a>
         </li>
     </ul>
     </div>
