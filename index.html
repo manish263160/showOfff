@@ -27,7 +27,7 @@
 
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
+   <script src="//platform.twitter.com/widgets.js"></script>
 <!-- Angular Material requires Angular.js Libraries -->
 <script src="vendor/bower_components/angular/angular.min.js"></script>
 <!-- <script src="vendor/bower_components/jpkleemans-angular-validate/dist/angular-validate.min.js"></script> -->
@@ -91,7 +91,8 @@
   
   window.fbAsyncInit = function() {
     FB.init({
-      appId            : '653698291482385', //'177903832632146'
+      appId            : '653698291482385', 
+      // appId            : '177903832632146',
       autoLogAppEvents : true,
       xfbml            : true,
       version          : 'v2.7'
@@ -108,17 +109,6 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 <!-- this is the script of the twitter -->
-<script>
-  window.twttr = (function (d,s,id) {
-    var t, js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-    js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-    }(document, "script", "twitter-wjs"));
- 
-twttr.ready(function (twttr) {
-    twttr.events.bind('tweet', reward_user);
-});
-</script>
+
   </html>
   
