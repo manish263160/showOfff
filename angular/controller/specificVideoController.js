@@ -5,7 +5,7 @@ function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$i
   var appDomain= UIConfig.app_domain;
   $scope.appDomain =appDomain;
   var vidsId = $stateParams.id;
-  console.log("vidsId====",vidsId);
+  //   console.log("vidsId====",vidsId);
   $scope.videos = [];
   $scope.allvideoCategoryName = [];
   $scope.getAllVidsForUI =[];
@@ -26,7 +26,7 @@ function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$i
   /* all videos from DB without category*/
   Service.rootApi.getSpecificVids({id : vidsId}).$promise.then(function (response) {
       if (response.length) {
-        console.log("=====",response)
+        //   console.log("=====",response)
        $scope.getAllVidsForUI = response;
       
        $scope.videos = $scope.getAllVidsForUI.slice(0,20);
@@ -211,7 +211,7 @@ object : {
 }
 })
 }, function(response){
-console.log("response is ",response);
+console.log("FB response is ",response);
 });
 }
    /* ----------------------------------------------Common jquery start for existing UI ------ */

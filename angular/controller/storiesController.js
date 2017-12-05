@@ -25,19 +25,19 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
         if (response.length) {
           $scope.getAllVidsForUI = response;
           $scope.videos = $scope.getAllVidsForUI.slice(0,20);
-          console.log("$scope.image===" + $scope.videos.length);   
+          //   console.log("$scope.image===" + $scope.videos.length);   
         }
       })
   
       $scope.loadData = function () {
         var data = $scope.videos;
-        console.log("loadtada data ----",data);
+        //   console.log("loadtada data ----",data);
         if (data) {
           var last = $scope.videos.length;
-          console.log("last===",last);
+          //   console.log("last===",last);
           $scope.videos = $scope.videos.concat($scope.getAllVidsForUI.slice(last, last + 20));
         }
-        console.log("$scope.ia=mages===",$scope.videos.length);
+        //   console.log("$scope.ia=mages===",$scope.videos.length);
       }
   
       
@@ -50,7 +50,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
          /* these codes for all video get from database by categry. */
          var param ={};
          if(item){
-          console.log("cateName====",item.name);
+          //   console.log("cateName====",item.name);
           $scope.activeCat = item.id;
           param = {categoryOrSeriesName : item.name };
          }else{
@@ -62,7 +62,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
             $scope.getAllVidsForUI = response;
             
             $scope.videos = $scope.getAllVidsForUI.slice(0,20);
-            console.log("$scope.videos===" + $scope.videos.length);   
+            //   console.log("$scope.videos===" + $scope.videos.length);   
           }
           else{
             $scope.videos = [];
@@ -72,7 +72,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
        }
     
       $scope.getSearchData = function (searchtxt) {
-        console.log("searchtxt===", searchtxt);
+        //   console.log("searchtxt===", searchtxt);
         if (searchtxt) {
           $scope.searchResultText = searchtxt;
           var param = { text: searchtxt }
@@ -83,7 +83,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
             }else{
               $scope.searcheVideoData = [];
             }
-            console.log("response searcheVideoData===", response);
+            //   console.log("response searcheVideoData===", response);
           });
         }
       }
@@ -94,7 +94,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
           $scope.searchResultText = searchtxt;
           var param = { text: searchtxt }
           Service.rootApi.searchImage(param).$promise.then(function (response) {
-            console.log("response search===", response.length);
+            //   console.log("response search===", response.length);
             if (response.length > 0) {
               $scope.videos =[];
                 $scope.getAllVidsForUI = response;              
@@ -110,7 +110,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
       }
   
        $scope.searchedDropDownDataOnClick = function(videoItem){
-        console.log("videoItem===",videoItem);
+        //   console.log("videoItem===",videoItem);
        
         $scope.videos =[]
         $scope.SearchResults = false;
@@ -128,7 +128,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
          
          // store the interval promise
          promise = $interval(function () {
-           console.log("interval call",$scope.videos.length);
+           //   console.log("interval call",$scope.videos.length);
           if($scope.videos.length > 0 ){
             $scope.isLoading =false;
           }else{
@@ -174,7 +174,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
           }
           })
           }, function(response){
-          console.log("response is ",response);
+          console.log("FB response is ",response);
           });
           }
        /* ----------------------------------------------Common jquery start for existing UI ------ */
