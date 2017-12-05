@@ -204,7 +204,7 @@ object : {
   'og:url': appDomain+'specificVideo/'+item.id, // your url to share
   'og:title': item.imageDescription ? item.imageDescription : 'Showofff: Videos, Memes, Quotes, Stories',
   'og:site_name':'Showofff.com',
-  'og:description':item.description,
+  // 'og:description':item.description,
   'og:image': item.videoThumbnail,
   'og:image:width':'200',//size of image in pixel
   'og:image:height':'200'
