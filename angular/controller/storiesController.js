@@ -68,7 +68,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
             $scope.videos = [];
           }
         })
-  
+        $('.category_drawer').fadeOut();
        }
     
       $scope.getSearchData = function (searchtxt) {
@@ -191,6 +191,9 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval ,UICo
         
         $(document).ready(function(e) {
             
+          $('.category_drawer ul li a').on('click', function (event) {
+            $('.category_drawer').fadeOut();
+          });
           // Menu Drawer
           $('.icon-menu').on('click', function(event){
             $('.menu_drawer').fadeIn();

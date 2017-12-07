@@ -73,7 +73,7 @@ function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$i
         $scope.videos = [];
       }
     })
-
+    $('.category_drawer').fadeOut();
    }
 
   $scope.getSearchData = function (searchtxt) {
@@ -227,7 +227,10 @@ console.log("FB response is ",response);
     
     
     $(document).ready(function(e) {
-        
+      
+      $('.category_drawer ul li a').on('click', function (event) {
+        $('.category_drawer').fadeOut();
+      });
       // Menu Drawer
       $('.icon-menu').on('click', function(event){
         $('.menu_drawer').fadeIn();
