@@ -25,7 +25,7 @@ app
     Service.rootApi.allCategorywiseVidsForUI().$promise.then(function (response) {
       if (response.length) {
         $scope.getAllVidsForUI = response;
-        
+        $scope.getAllVidsForSearch = response;
         $scope.videos = $scope.getAllVidsForUI.slice(0,20);
         // console.log("$scope.videos===" + $scope.videos.length);   
       }

@@ -28,7 +28,7 @@ function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$i
       if (response.length) {
         //   console.log("=====",response)
        $scope.getAllVidsForUI = response;
-      
+       $scope.getAllVidsForSearch = response;
        $scope.videos = $scope.getAllVidsForUI.slice(0,20);
       // console.log("$scope.videos===" + $scope.videos.length);   
     }

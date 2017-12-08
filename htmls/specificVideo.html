@@ -59,11 +59,11 @@
                 <span class="icon-stories"></span> STORIES</a>
             <span class="icon-search icon-search2"></span>
             <div class="m_search">
-                <input type="text" placeholder="Search Videos.." ng-model="m_searchtxt" ng-change="getSearchData(m_searchtxt)" id="m_search">
+                <input type="text" placeholder="Search Videos.." ng-model="m_searchtxt"  id="m_search">
                 <span class="icon-cross" ng-click="getSearchClick(searchtxt)"></span>
             </div>
             <ul class="m_search_results">
-            <li ng-repeat="searchitem in searcheVideoData">
+                <li ng-repeat="searchitem in getAllVidsForSearch | filter:m_searchtxt" ng-if="getAllVidsForSearch.length > 0">
                 <a href="javascript:void(0)" ng-click="searchedDropDownDataOnClick(searchitem)">{{searchitem.title}}</a>
             </li>
         </ul>
@@ -74,10 +74,10 @@
                 <img src="images/google-play.png" width="117" height="35" alt="" class="right" />
             </a>
             <form class="search" ng-submit="getSearchClick(searchtxt)">
-                <input type="text" id="search" ng-model="searchtxt" autocomplete="off" ng-change="getSearchData(searchtxt)" placeholder="Search Videos..">
+                <input type="text" id="search" ng-model="searchtxt" autocomplete="off"  placeholder="Search Videos..">
                 <span class="icon-search" ng-click="getSearchClick(searchtxt)" ></span>
                 <ul class="search_results">
-                    <li ng-repeat="searchitem in searcheVideoData" ng-if="searcheVideoData.length > 0">
+                    <li ng-repeat="searchitem in getAllVidsForSearch | filter:searchtxt" ng-if="getAllVidsForSearch.length > 0">
                         <a href="javascript:void(0)" ng-click="searchedDropDownDataOnClick(searchitem)">{{searchitem.title}}</a>
                     </li>
                     <!-- <li ng-if="searcheVideoData.length <=0"><a>Nothing Found</a></li> -->
