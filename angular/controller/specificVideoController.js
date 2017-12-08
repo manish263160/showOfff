@@ -22,13 +22,19 @@ function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$i
     }
   })
 
-
+/* all videos from DB without category*/
+Service.rootApi.allCategorywiseVidsForUI().$promise.then(function (response) {
+  if (response.length) {
+    $scope.getAllVidsForSearch = response;
+    // console.log("$scope.videos===" + $scope.videos.length);   
+  }
+})
   /* all videos from DB without category*/
   Service.rootApi.getSpecificVids({id : vidsId}).$promise.then(function (response) {
       if (response.length) {
         //   console.log("=====",response)
        $scope.getAllVidsForUI = response;
-       $scope.getAllVidsForSearch = response;
+      
        $scope.videos = $scope.getAllVidsForUI.slice(0,20);
       // console.log("$scope.videos===" + $scope.videos.length);   
     }
