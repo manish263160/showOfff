@@ -1,10 +1,15 @@
-
 <update-title title="Specific Video"></update-title>
-<update-meta name="twitter:card" content="summary"/>
-<update-meta name="twitter:url" content="{{appDomain}}specificVideo/{{videos[0].id}}"/>
-<update-meta name="twitter:title" content="{{videos[0].title}}"/>
-<update-meta name="twitter:description" content="my example website is on twitter"/>
-<update-meta name="twitter:image" content="{{videos[0].videoThumbnail}}" />
+<update-meta property="og:url" content="{{appDomain}}specificVideo/{{videos[0].id}}"></update-meta>
+<update-meta property="og:type" content="website"> </update-meta>
+<update-meta property="og:title" content="{{videos[0].title}}"></update-meta>
+<update-meta property="og:image" content="{{videos[0].videoThumbnail}}"></update-meta>
+<update-meta property="og:description" content="{{videos[0].description}}"></update-meta>
+
+<update-meta property="twitter:card" content="summary"/>
+<update-meta property="twitter:url" content="{{appDomain}}specificVideo/{{videos[0].id}}"/>
+<update-meta property="twitter:title" content="{{videos[0].title}}"/>
+<update-meta property="twitter:description" content="{{videos[0].description}}"/>
+<update-meta property="twitter:image" content="{{videos[0].videoThumbnail}}" />
 <!-- Menu Drawer start -->
 <div ng-click="htmlclick()">
     <div class="menu_drawer">
