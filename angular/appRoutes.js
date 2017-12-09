@@ -46,6 +46,11 @@ app.config(['$locationProvider', function ($locationProvider) {
           content: {
             templateUrl: "htmls/stories.html",
             controller: 'storiesController',
+            data: {
+              meta: {
+                  'title' :"specific story"
+                  }
+            }
           },
         },
       })
@@ -55,6 +60,11 @@ app.config(['$locationProvider', function ($locationProvider) {
           content: {
             templateUrl: "htmls/specificVideo.html",
             controller: 'specificVideoController',
+            data: {
+              meta: {
+                  'title' :"specific videos"
+                  }
+            }
           },
         },
       })

@@ -1,19 +1,19 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" ng-app="app">
   <head>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta property="og:url" content="Your website URL"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Title for showing on facebook"/>
-    <meta property="og:image" content="Image url for display"/>
-    <meta property="og:description" content="Description about your website"/>
+    <meta property="og:url" content="{{ngMeta['og:url']}"/>
+    <meta property="og:type" content="{{ngMeta['og:type']}"/>
+    <meta property="og:title" content="{{ngMeta['og:title']}"/>
+    <meta property="og:image" content="{{ngMeta['og:image']}"/>
+    <meta property="og:description" content="{{ngMeta['og:description']}"/>
 
     <meta property="twitter:card" content="summary"/>
-    <meta property="twitter:url" content="http://example.com"/>
-    <meta property="twitter:title" content="My awesome website title"/>
-    <meta property="twitter:description" content="my example website is on twitter"/>
-    <meta property="twitter:image" content="http://example.com/og_img.jpg" />
+    <meta property="twitter:url" content="{{ngMeta['twitter:url']}"/>
+    <meta property="twitter:title" content="{{ngMeta['twitter:title']}"/>
+    <meta property="twitter:description" content="{{ngMeta['twitter:title']}"/>
+    <meta property="twitter:image" content="{{ngMeta['twitter:image']}" />
 
     <title>Showofff: Videos, Memes, Quotes, Stories</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
@@ -55,12 +55,15 @@
 <script src="vendor/angular-video/js/anguvideo.js"></script>
 <script src="vendor/bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
 <script src="vendor/bower_components/angular-update-meta/dist/update-meta.min.js"></script>
+<script src="vendor/bower_components/ngMeta/dist/ngMeta.min.js"></script>
 
 <!-- component app js -->
 <script src="angular/app.js"></script>
 <script src="angular/UIConfig.js"></script>
 <script src="angular/appRoutes.js"></script>
 <script src="angular/services/services.js"></script>
+<script src="angular/services/pageHeader.js"></script>
+
 <script src="angular/controller/allvideoController.js"></script>
 <script src="angular/controller/storiesController.js"></script>
 <script src="angular/controller/aboutusController.js"></script>
@@ -75,7 +78,7 @@
     <![endif]-->
   </head>
   
-  <body ng-app="app">
+  <body>
     
     <div ui-view="content" ></div>
   </body>

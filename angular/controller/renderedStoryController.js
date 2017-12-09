@@ -1,6 +1,6 @@
 app
 .controller("renderedStoryController",
-function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$interval , UIConfig) {
+function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$interval , UIConfig ,ngMeta) {
   
       var appDomain= UIConfig.app_domain;
       $scope.appDomain =appDomain;
@@ -25,11 +25,21 @@ function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$i
   
       /* all videos from DB without category*/
       Service.rootApi.getSpecificImage({id : imgId}).$promise.then(function (response) {
-        console.log("====response=====",response);
         if (response.length) {
           $scope.getAllVidsForUI = response;
           $scope.videos = $scope.getAllVidsForUI.slice(0,20);
         //   console.log("$scope.image===" + $scope.videos.length);   
+
+        ngMeta.setTag('og:url', appDomain+"specificStory/"+$scope.videos[0].id);
+        ngMeta.setTag('og:type', 'website');
+        ngMeta.setTag('og:title', $scope.videos[0].imageDescription);
+        ngMeta.setTag('og:image', $scope.videos[0].imageUrl);
+        ngMeta.setTag('og:description', $scope.videos[0].imageDescription);
+  
+        ngMeta.setTag('twitter:url', appDomain+"specificStory/"+$scope.videos[0].id);
+        ngMeta.setTag('twitter:title', $scope.videos[0].imageDescription);
+        ngMeta.setTag('twitter:image', $scope.videos[0].imageUrl);
+        ngMeta.setTag('twitter:description', $scope.videos[0].imageDescription);
         }
       })
   

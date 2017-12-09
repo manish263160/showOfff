@@ -1,10 +1,9 @@
 var app = angular.module('app',['UIConfig' , 'ui.router', 'uiRouterStyles','720kb.socialshare',
-'ngResource', 'infinite-scroll', 'ngYoutubeEmbed' , 'anguvideo' , 'updateMeta'
-
+'ngResource', 'infinite-scroll', 'ngYoutubeEmbed' , 'anguvideo' , 'updateMeta' , 'ngMeta'
 ]);
 
 
-app.config(function ($provide) {
+app.config(function ($provide ,ngMetaProvider) {
     
       $provide.decorator('$exceptionHandler', function ($delegate) {
     
@@ -14,7 +13,10 @@ app.config(function ($provide) {
          console.log('There is something wrong, please try again.');
         };
       });
-    });
+    })
+    .run(['ngMeta', function(ngMeta) { 
+      ngMeta.init();
+    }]);
     
     app.config(function ($qProvider) {
       $qProvider.errorOnUnhandledRejections(false);
