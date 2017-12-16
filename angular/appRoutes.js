@@ -76,7 +76,25 @@ app.config(['$locationProvider', function ($locationProvider) {
             controller: 'renderedStoryController',
           },
         },
-      })      
+      })
+      .state('webseries', {
+        url: "/webseries",
+        views: {
+          content: {
+            templateUrl: "htmls/webseries/webseries.html",
+            controller: 'webseriesController',
+          },
+        },
+      })  
+      .state('webSeriesData', {
+        url: "/webSeriesData/:data",
+        views: {
+          content: {
+            templateUrl: "htmls/webseries/seriesData.html",
+            controller: 'seriesdataController',
+          },
+        },
+      })  
      /* .state('faq', {
         url: "/faq",
         views: {

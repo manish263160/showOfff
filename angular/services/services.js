@@ -110,8 +110,13 @@ app.factory('Service', function ($resource, $rootScope, UIConfig) {
         method: 'GET',
         isArray: true,
         transformResponse: defaultTransformResponse
+      },
+      webSeries:{
+        url: rootURL + '/restTempletForWeb/webSeries',
+        method: 'GET',
+        isArray: true,
+        transformResponse: defaultTransformResponse
       }
-
 
 
     }),

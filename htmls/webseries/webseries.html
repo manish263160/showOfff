@@ -1,0 +1,272 @@
+
+<!-- Menu Drawer start -->
+<div ng-click="htmlclick()">
+    <div class="menu_drawer">
+        <span class="icon-cross"></span>
+        <br>
+            <ul>
+                <li><a ui-sref="stories">Stories</a></li>
+                <li><a ui-sref="video">Videos</a></li>
+                <li><a ui-sref="aboutus">About Us</a></li>
+                <li><br>
+        showoff.hello@gmail.com
+        <div class="social-icons">
+                    <a href="https://www.facebook.com/showofff7" target="_blank" class="facebook active"><i class="icon-facebook"></i></a> 
+                    <a href="https://twitter.com/showofff7" target="_blank" class="twitter active"><i class="icon-twitter"></i></a> 
+                    <a href="https://instagram.com/showofff7" target="_blank" class="instagram active"><i class="icon-instagram"></i></a> 
+                    <a href="https://www.youtube.com/channel/UCuqDR9bUwIaE7nxZwqbobaQ" target="_blank" class="youtube active"><i class="icon-youtube"></i></a>
+                    </div>
+                    <a href="https://goo.gl/MF7YuQ" target="_blank"><img src="images/google-play2.jpg" width="165" alt=""/></a></li>
+            </ul>	
+        </div>
+        <!--/ Menu Drawer end -->
+        
+        <!-- Mobile category Drawer start -->
+        <div class="m_category">Category</div>
+        <div class="category_drawer"><span class="icon-cross icon-cross2"></span>
+        <br>
+        <h3>Choose Category</h3><br>
+        <ul>
+            <li>
+                <a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all'  ? 'active' : ''">Latest Videos</a>
+            </li>
+            <li>
+                <a ui-sref="webseries" ng-class="activeCat === 'web'  ? 'active' : ''" ui-sref-opts="{reload: true, notify: true}">webseries</a>
+            </li>
+           <!--  <li>
+                    <a href="javascript:void(0)" ng-click="getAllWebSeries()"  ng-class="activeCat === 'webseries'  ? 'active' : ''">Web Series</a>
+                </li> -->
+            <li ng-repeat="item in allvideoCategoryName">
+                <a href="javascript:void(0)" ng-click="goTocategory(item)" ng-class="activeCat === item.id ? 'active' : ''">{{item.name}}</a>
+            </li>
+        
+        </ul></div>
+        <!--/ Mobile category Drawer end -->
+        
+        
+        <!-- Navigation Start -->
+        <div class="navigation">
+        <div class="container">
+        <div class="col1"><a ui-sref="aboutus" class="m_none"><img src="images/logo.png" width="116" height="36" alt="" class="left"/></a> </div>
+        <div class="col2 links">
+            <span class="icon-menu"></span>
+            <a ui-sref="video" class="active">
+                <span class="icon-video"></span> VIDEOS</a> &nbsp;
+            <a ui-sref="stories">
+                <span class="icon-stories"></span> STORIES</a>
+            <span class="icon-search icon-search2"></span>
+            <div class="m_search">
+                <input type="text" placeholder="Search Videos.." ng-model="m_searchtxt"  id="m_search">
+                <span class="icon-cross"  ng-click="getSearchClick(m_searchtxt)"></span>
+            </div>
+            <ul class="m_search_results">
+                <li ng-repeat="searchitem in getAllVidsForSearch | filter:m_searchtxt" ng-if="getAllVidsForSearch.length > 0">
+                <a href="javascript:void(0)" ng-click="searchedDropDownDataOnClick(searchitem)"> {{searchitem.title}}</a>
+            </li>
+        </ul>
+        </div>
+        
+        <div class="col1">
+            <a href="https://goo.gl/MF7YuQ" target="_blank" class="m_none t_none">
+                <img src="images/google-play.png" width="117" height="35" alt="" class="right" />
+            </a>
+            <form class="search" ng-submit="getSearchClick(searchtxt)">
+                <input type="text" id="search" ng-model="searchtxt" autocomplete="off"  placeholder="Search Videos..">
+                <span class="icon-search" ng-click="getSearchClick(searchtxt)" ></span>
+                <ul class="search_results">
+                    <li ng-repeat="searchitem in getAllVidsForSearch | filter:searchtxt" ng-if="getAllVidsForSearch.length > 0">
+                        <a href="javascript:void(0)" ng-click="searchedDropDownDataOnClick(searchitem)">{{searchitem.title}}</a>
+                    </li>
+                    <!-- <li ng-if="searcheVideoData.length <=0"><a>Nothing Found</a></li> -->
+                   
+                </ul>
+            </form>
+        </div>
+         </div>
+        </div>
+        <!--/ Navigation end -->
+        
+        <!-- Stories container start -->
+        <section class="wrapper">
+            <div class="container">
+                <div class="lt_box" id="leftsidebar2">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all'  ? 'active' : ''">Latest Videos</a>
+                        </li>
+                        <li>
+                            <a ui-sref="webseries" ng-class="activeCat === 'web'  ? 'active' : ''" ui-sref-opts="{reload: true, notify: true}" >webseries</a>
+                        </li>
+                       <!--  <li>
+                                <a href="javascript:void(0)" ng-click="getAllWebSeries()"  ng-class="activeCat === 'webseries'  ? 'active' : ''">Web Series</a>
+                            </li> -->
+                        <li ng-repeat="item in allvideoCategoryName">
+                            <a href="javascript:void(0)" ng-click="goTocategory(item)" ng-class="activeCat === item.id ? 'active' : ''">{{item.name}}</a>
+                        </li>
+                    
+                    </ul>
+                    <div class="social-icons">
+                    <a href="https://www.facebook.com/showofff7" target="_blank" class="facebook active"><i class="icon-facebook"></i></a><a href="https://twitter.com/showofff7" target="_blank" class="twitter active"><i class="icon-twitter"></i></a><a href="https://instagram.com/showofff7" target="_blank" class="instagram active"><i class="icon-instagram"></i></a><a href="https://www.youtube.com/channel/UCuqDR9bUwIaE7nxZwqbobaQ" target="_blank" class="youtube active"><i class="icon-youtube"></i></a>
+                    </div> 
+              </div>
+              
+                <div class="rt_box rt_box_video">
+                    <div ng-if="isLoading" class="loading-gif">
+                        <img src="images/loading2.gif" alt="loading" >
+                    </div>
+                    <div ng-if="SearchResults" class="search_results_container"><strong>Search Results </strong> {{searchResultText}}</div>
+                    <div ng-if="nothingFound" class="search_results_container">Nothing Found For {{searchResultText}}</div>
+                    
+                    <!-- this is section for webserarch -->
+                    <ul  infinite-scroll='loadData()'
+                    infinite-scroll-use-document-bottom ='true'
+                    infinite-scroll-distance='2' infinite-scroll-disabled='disabled' ng-if="!fromSearch && fromWeb">
+                            <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
+                            <li ng-repeat="x in videos">
+                                    <div class="video_wrapper">
+                                        
+                                        <a href="javascript:void(0)" ui-sref="webSeriesData({data :{{x.serID}}})" >
+                                            <!-- <span class="time" ng-if="!x.isPlayer">{{x.timeLength}}</span> -->
+                                            <!-- <span class="video-icon" ng-click="x.isPlayer = true" ></span> -->
+                                            <div class="video-container">
+                                             <img ng-src="{{x.videoThumbnail}}" width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
+                                            <!--  <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" class="yt_video" videoid="myvideo{{x.id}}">
+                                                </ng-youtube-embed>  -->
+                                            </div>
+                                        </a>
+                                        <div class="video-content">
+                                            <h2><a href="javascript:void(0)" ui-sref="webSeriesData({data:{{x.serID}}})" ui-sref-opts="{reload: true, inherit: false, notify: true }">{{x.seriesName}}</a></h2>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                    <!-- this is for normal video  -->
+                    <ul  infinite-scroll='loadData()'
+                    infinite-scroll-use-document-bottom ='true'
+                    infinite-scroll-distance='2' infinite-scroll-disabled='disabled' ng-if="!fromSearch && !fromWeb">
+                            <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
+                            <li ng-repeat="x in videos">
+                                    <div class="video_wrapper">
+                                        
+                                        <a>
+                                            <span class="time" ng-if="!x.isPlayer">{{x.timeLength}}</span>
+                                            <span class="video-icon" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"></span>
+                                            <label style="display: none;">{{x.videoThumbnail}}</label>
+                                            <div class="video-container">
+                                             <img ng-src="{{x.videoThumbnail}}" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"  width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
+                                             <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" class="yt_video" videoid="myvideo{{x.id}}">
+                                                </ng-youtube-embed> 
+                                            </div>
+                                        </a>
+                                        <div class="video-content">
+                                            <h2><a ui-sref="specificVideo({id:{{x.id}}})" ui-sref-opts="{reload: true, inherit: false, notify: true }">{{x.title}}</a></h2>
+                                             <div class="tooltip share_link" ng-click="showShare($index , $event);">
+                                                    <i class="tooltiptext">Share</i>
+                                                    <a href="javascript:void(0)" class="video-share">
+                                                        <span class="icon-share"></span>
+                                                    </a>
+                                                </div>
+                                            <!-- Social Share start -->
+                                        <div class="share_box" id="share_box{{$index}}">
+                                                <div class="social-icons">
+                                    <a href="javascript:void(0)" class="facebook" ng-click="facebookshare(x)" >
+                                    <i class="icon-facebook"></i>
+                                    </a>
+                                
+                                                    
+                                                     <!-- <a href="#"
+                                                    socialshare
+                                                    socialshare-provider="twitter"
+                                                    socialshare-text="{{x.title}}"
+                                                    socialshare-url="{{appDomain}}specificVideo/{{x.id}}"
+                                                    socialshare-hashtags="{{x.title}}"
+                                                    class="twitter">
+                                                       <i class="icon-twitter"></i>
+                                                    </a>  -->
+                                                </div>
+                                            </div>
+                                            <!-- Social Share end /-->
+                                            <!-- <div class="tooltip">
+                                                <i class="tooltiptext">Download</i>
+                                                <a href="javascript:void(0)" class="video-dowload">
+                                                    <span class="icon-download"></span>
+                                                </a>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </li>
+                      <!-- <li><a href="#" ng-click="chunksOfData(start,end)">More</a></li> -->
+                        
+                    </ul>
+                   
+                    <ul   ng-if="fromSearch && !fromWeb">
+                            <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
+                            <li ng-repeat="x in videos">
+                                    <div class="video_wrapper">
+                                         <a>
+                                            <span class="time" ng-if="!x.isPlayer">{{x.timeLength}}</span>
+                                            <span class="video-icon" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"></span>
+                                            <label style="display: none;">{{x.videoThumbnail}}</label>
+                                            <div class="video-container">
+                                             <img ng-src="{{x.videoThumbnail}}" ng-click="x.isPlayer = true" ng-if="!x.isPlayer"  width="720" height="405" alt="" onerror="this.src='http://via.placeholder.com/542x306';"/>  
+                                             <ng-youtube-embed autoplay="true" video="x.videoLink" ng-if="x.isPlayer" class="yt_video" videoid="myvideo{{x.id}}">
+                                                </ng-youtube-embed> 
+                                                </div>
+                                        </a>
+                                        <div class="video-content">
+                                            <h2><a ui-sref="specificVideo({id:{{x.id}}})">{{x.title}}</a></h2>
+                                            <!-- <div class="tooltip">
+                                                <i class="tooltiptext">Share</i>
+                                                 <a href="javascript:void(0)" class="video-share"> 
+                                                        <a href="#" class="video-share" socialshare socialshare-provider="twitter" socialshare-text="720kb AngularJS Socialshare"
+                                                        socialshare-hashtags="angularjs, angular-socialshare" socialshare-url="http://720kb.net">
+                                                    <span class="icon-share"></span>
+                                                </a>
+                                            </div> -->
+                                            <div class="tooltip share_link" ng-click="showShare($index , $event);">
+                                                    <i class="tooltiptext">Share</i>
+                                                    <a href="javascript:void(0)" class="video-share">
+                                                        <span class="icon-share"></span>
+                                                    </a>
+                                                </div>
+                                            <!-- Social Share start -->
+                                        <div class="share_box" id="share_box{{$index}}">
+                                                <div class="social-icons">
+                                                        <a  href="javascript:void(0)" class="facebook" ng-click="facebookshare(x)" >
+                                                                <i class="icon-facebook"></i>
+                                                                </a>
+                                                            
+                                                                <!--  <a  href="javascript:void(0)"
+                                                                socialshare
+                                                                socialshare-provider="twitter"
+                                                                socialshare-text="{{x.title}}"
+                                                                socialshare-url="{{appDomain}}specificVideo/{{x.id}}"
+                                                                socialshare-hashtags="{{x.title}}"
+                                                                class="twitter">
+                                                                   <i class="icon-twitter"></i>
+                                                                </a>  -->
+                                                                
+                                                </div>
+                                            </div>
+                                            <!-- Social Share end /-->
+                                           <!--  <div class="tooltip">
+                                                <i class="tooltiptext">Download</i>
+                                                <a href="javascript:void(0)" class="video-dowload">
+                                                    <span class="icon-download"></span>
+                                                </a>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </li>
+                      <!-- <li><a href="#" ng-click="chunksOfData(start,end)">More</a></li> -->
+                        
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+        <!--/ Stories container end -->
+        </div>
+      
+       
