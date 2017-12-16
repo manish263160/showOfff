@@ -37,7 +37,7 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval , UIC
 
         Service.rootApi.webSeries().$promise.then(function (response) {
             if (response.length && response.length > 0) {
-                console.log("response=========",response);
+                // console.log("response=========",response);
                 var data=response;
                 var videosArray =[];
                 var allVideoArr =[];

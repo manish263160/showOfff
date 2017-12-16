@@ -78,7 +78,7 @@ function ($scope, $http, $window,$stateParams,$rootScope, $timeout, Service ,$in
     Service.rootApi.allCategorywiseVidsForUI(param).$promise.then(function (response) {
       if (response.length > 0) {
         $scope.getAllVidsForUI = response;
-        
+        $scope.getAllVidsForSearch = response;
         $scope.videos = $scope.getAllVidsForUI.slice(0,20);
         // console.log("$scope.videos===" + $scope.videos.length);   
       }
