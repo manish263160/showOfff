@@ -13,6 +13,7 @@ function ($scope, $http, $window,$stateParams,$rootScope, $timeout, Service ,$in
   $scope.isLoading =false;
   $scope.searcheVideoData =[];
   $scope.activeCat = 'web';
+  $scope.seriesName="";
   /* all category name from DB */
   Service.rootApi.Categrylist({ token: 'video' }).$promise.then(function (response) {
     // console.log("Categrylist==",JSON.stringify(response) );
@@ -32,8 +33,10 @@ function ($scope, $http, $window,$stateParams,$rootScope, $timeout, Service ,$in
                 var seriesName= element.seriesName;
                 videosArray.push(element.seriesList[0]);
                 element.seriesList.forEach(data =>{
-                  if($scope.serId == data.serID)
+                  if($scope.serId == data.serID){
+                    $scope.seriesName  = data.seriesName;
                     allVideoArr.push(data);
+                  }
                 })
             }
         });

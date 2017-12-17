@@ -39,6 +39,7 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   
   h1, h2, h3, h4, h5,h6{ margin-top:0px;}
   h1{font-size:38px;}
+  .heading{ font-size:31px; line-height: initial; margin-bottom: 15px;}
   .navigation{ display: block; background: #fff; box-shadow: 0 0 1px #ccc;     text-align: center; line-height: 37px; font-size: 18px;padding:0px 0; position: fixed; width: 100%; top: 0; z-index: 999; }
   .navigation .links a{ text-decoration: none; color:#888b8c; padding:7px 0 4px; display: inline-block; margin: 0 10px; border-bottom:2px #fff solid; font-weight:500; }
   .navigation .links a span.video_img{ background: url(../images/sprite.png) -1px -0px no-repeat; float: left; margin-right: 7px; width: 20px; height: 21px; margin-top: 9px;}
@@ -78,9 +79,8 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   .rt_box_video .video_wrapper h2{ font-weight: 500; width: 84%; float: left; margin-bottom: 5px; font-size: 22px; line-height: 30px; }
   .rt_box_video .video_wrapper  a{ position: relative; float: left; width: 100%;}
   .rt_box_video .video_wrapper .time{ position: absolute; background:rgba(0, 0, 0, 0.80); color: #fff; bottom: 6px; right:6px; font-size: 13px; padding: 0px 8px; border-radius: 2px; }
-  .rt_box_video .video_wrapper .video-icon{ background:url(../images/play-icon.png) 0 0 no-repeat; width: 70px; height: 70px; position: absolute; left: 285px; top:150px;}
+  .rt_box_video .video_wrapper .video-icon{ background:url(../images/play-icon.png) 0 0 no-repeat; width: 70px; height: 70px; position: absolute; left: 50%; top:50%; margin-left: -35px; margin-top: -35px;}
   .rt_box_video .video-container{ width:100%; height: auto; background: #ccc; float: left;}
-  
   .rt_box_video .video-content{margin-top:8px; float: left; width: 100%;}
   .rt_box ul li{ position: relative; width: 100%; margin-bottom:40px;/* box-shadow: 0 0 8px #999; */float: left;}
   .rt_box ul li a.more{ background:#417EF7; color: #fff; padding: 8px 0; text-align: center; text-decoration: none; position: absolute; bottom: 0; left:0px; width: 100%; font-size: 17px;}

@@ -31,7 +31,7 @@
                 <a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all'  ? 'active' : ''">Latest Videos</a>
             </li>
             <li>
-                <a ui-sref="webseries" ng-class="activeCat === 'web'  ? 'active' : ''" ui-sref-opts="{reload: true, notify: true}">webseries</a>
+                <a ui-sref="webseries" ng-class="activeCat === 'web'  ? 'active' : ''" ui-sref-opts="{reload: true, notify: true}">Web Series</a>
             </li>
            <!--  <li>
                     <a href="javascript:void(0)" ng-click="getAllWebSeries()"  ng-class="activeCat === 'webseries'  ? 'active' : ''">Web Series</a>
@@ -95,7 +95,7 @@
                             <a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all'  ? 'active' : ''">Latest Videos</a>
                         </li>
                         <li>
-                            <a ui-sref="webseries" ng-class="activeCat === 'web'  ? 'active' : ''" ui-sref-opts="{reload: true, notify: true}" >webseries</a>
+                            <a ui-sref="webseries" ng-class="activeCat === 'web'  ? 'active' : ''" ui-sref-opts="{reload: true, notify: true}" >Web Series</a>
                         </li>
                        <!--  <li>
                                 <a href="javascript:void(0)" ng-click="getAllWebSeries()"  ng-class="activeCat === 'webseries'  ? 'active' : ''">Web Series</a>
@@ -118,10 +118,11 @@
                     <div ng-if="nothingFound" class="search_results_container">Nothing Found For {{searchResultText}}</div>
                     
                     <!-- this is section for webserarch -->
+                    <h1 class="heading">All Web Series</h1>
                     <ul  infinite-scroll='loadData()'
                     infinite-scroll-use-document-bottom ='true'
                     infinite-scroll-distance='2' infinite-scroll-disabled='disabled' ng-if="!fromSearch && fromWeb">
-                            <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
+                    <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
                             <li ng-repeat="x in videos">
                                     <div class="video_wrapper">
                                         

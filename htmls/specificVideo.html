@@ -41,9 +41,9 @@
             <li>
                 <a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all'  ? 'active' : ''">Latest Videos</a>
             </li>
-           <!--  <li>
-                    <a href="javascript:void(0)" ng-click="getAllWebSeries()"  ng-class="activeCat === 'webseries'  ? 'active' : ''">Web Series</a>
-                </li> -->
+            <li>
+                    <a href="javascript:void(0)" ui-sref="webseries">Web Series</a>
+                </li> 
             <li ng-repeat="item in allvideoCategoryName">
                 <a href="javascript:void(0)" ng-click="goTocategory(item)" ng-class="activeCat === item.id ? 'active' : ''">{{item.name}}</a>
             </li>
@@ -102,9 +102,9 @@
                         <li>
                             <a href="javascript:void(0)" ng-click="goTocategory()"  ng-class="activeCat === 'all'  ? 'active' : ''">Latest Videos</a>
                         </li>
-                       <!--  <li>
-                                <a href="javascript:void(0)" ng-click="getAllWebSeries()"  ng-class="activeCat === 'webseries'  ? 'active' : ''">Web Series</a>
-                            </li> -->
+                        <li>
+                                <a href="javascript:void(0)" ui-sref="webseries">Web Series</a>
+                            </li> 
                         <li ng-repeat="item in allvideoCategoryName">
                             <a href="javascript:void(0)" ng-click="goTocategory(item)" ng-class="activeCat === item.id ? 'active' : ''">{{item.name}}</a>
                         </li>
