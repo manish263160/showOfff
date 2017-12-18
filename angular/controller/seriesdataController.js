@@ -14,6 +14,8 @@ function ($scope, $http, $window,$stateParams,$rootScope, $timeout, Service ,$in
   $scope.searcheVideoData =[];
   $scope.activeCat = 'web';
   $scope.seriesName="";
+  $scope.fromSearch  =false;
+  $scope.fromWeb =false;
   /* all category name from DB */
   Service.rootApi.Categrylist({ token: 'video' }).$promise.then(function (response) {
     // console.log("Categrylist==",JSON.stringify(response) );
@@ -43,7 +45,7 @@ function ($scope, $http, $window,$stateParams,$rootScope, $timeout, Service ,$in
         $scope.getAllVidsForUI = allVideoArr;
         $scope.getAllVidsForSearch = allVideoArr;
         $scope.videos = $scope.getAllVidsForUI.slice(0,20);
-
+        $scope.fromWeb =true;
     /* $scope.getAllVidsForUI = response;
     $scope.getAllVidsForSearch = response;
     $scope.videos = $scope.getAllVidsForUI.slice(0,20); */
@@ -67,7 +69,7 @@ function ($scope, $http, $window,$stateParams,$rootScope, $timeout, Service ,$in
       $scope.SearchResults = false;
       $scope.nothingFound = false;
       $scope.fromSearch  =false;
-      
+      $scope.fromWeb  =false;
      /* these codes for all video get from database by categry. */
      var param ="";
      if(item){
@@ -146,6 +148,7 @@ function ($scope, $http, $window,$stateParams,$rootScope, $timeout, Service ,$in
     $scope.activeCat = undefined;
     $scope.videos.push(videoItem);
     $scope.fromSearch =true;
+    $scope.fromWeb  =false;
    }
 
      $scope.getAllWebSeries =function(){

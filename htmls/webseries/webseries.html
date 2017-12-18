@@ -118,10 +118,10 @@
                     <div ng-if="nothingFound" class="search_results_container">Nothing Found For {{searchResultText}}</div>
                     
                     <!-- this is section for webserarch -->
-                    <h1 class="heading">All Web Series</h1>
                     <ul  infinite-scroll='loadData()'
                     infinite-scroll-use-document-bottom ='true'
                     infinite-scroll-distance='2' infinite-scroll-disabled='disabled' ng-if="!fromSearch && fromWeb">
+                    <h1 class="heading">All Web Series</h1>
                     <!-- <li ng-repeat="x in temparray">{{x.videoThumbnail}}</li> -->
                             <li ng-repeat="x in videos">
                                     <div class="video_wrapper">

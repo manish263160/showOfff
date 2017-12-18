@@ -117,7 +117,7 @@
                     <div ng-if="SearchResults" class="search_results_container"><strong>Search Results </strong> {{searchResultText}}</div>
                     <div ng-if="nothingFound" class="search_results_container">Nothing Found For {{searchResultText}}</div>
                     
-                    <h1 class="heading">{{seriesName}}</h1>
+                    <h1 class="heading" ng-if="!fromSearch && fromWeb">{{seriesName}}</h1>
                     <ul  infinite-scroll='loadData()'
                     infinite-scroll-use-document-bottom ='true'
                     infinite-scroll-distance='2' infinite-scroll-disabled='disabled' ng-if="!fromSearch">
