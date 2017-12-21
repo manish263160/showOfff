@@ -1,0 +1,26 @@
+Sitemap: http://showofff.com/sitemap.xml
+
+Sitemap: https://www.showofff.com/sitemaps.xml 
+ 
+ 
+# Google Image
+User-agent: *
+Disallow:
+Allow: /*
+ 
+# Google AdSense
+User-agent: Mediapartners-Google
+Disallow:
+ 
+# digg mirror
+User-agent: duggmirror
+Disallow: /
+ 
+# global
+User-agent: *
+Disallow: /angular/
+Disallow: /css/
+Disallow: /images/
+Disallow: /js/
+Disallow: /vendor/
+
