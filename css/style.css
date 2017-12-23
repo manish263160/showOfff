@@ -339,9 +339,8 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
     .search_results_container {padding-left: 15px;}
     .yt_video{ width: 100%; height: 220px;}
     .yt_video iframe{width:100%; height:220px;}
-  
     .top_head a{ right:13px; bottom: 13px;}
-    
+    .heading {font-size: 20px; margin-left: 14px;}
   }
   
   /* Tablet */
