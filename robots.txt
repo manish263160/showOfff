@@ -1,6 +1,6 @@
-Sitemap: http://showofff.com/sitemap.xml
+Sitemap: http://showoff.tv/sitemap.xml
 
-Sitemap: https://www.showofff.com/sitemaps.xml 
+Sitemap: https://www.showoff.tv/sitemaps.xml 
  
  
 # Google Image

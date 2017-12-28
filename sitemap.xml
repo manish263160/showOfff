@@ -7,36 +7,36 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>http://showofff.com/#/video</loc>
+  <loc>http://showoff.tv/#/video</loc>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
 
 <url>
-  <loc>http://showofff.com/#/stories</loc>
+  <loc>http://showoff.tv/#/stories</loc>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
 
 
 <url>
-  <loc>http://showofff.com/#/aboutus</loc>
+  <loc>http://showoff.tv/#/aboutus</loc>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
 
 <url>
-  <loc>http://showofff.com/#/specificVideo/*</loc>
+  <loc>http://showoff.tv/#/specificVideo/*</loc>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
 <url>
-  <loc>http://showofff.com/#/webseries</loc>
+  <loc>http://showoff.tv/#/webseries</loc>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
 <url>
-  <loc>http://showofff.com/#/webSeriesData/*</loc>
+  <loc>http://showoff.tv/#/webSeriesData/*</loc>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>

@@ -177,7 +177,7 @@ function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$i
           object : {
           'og:url': appDomain+'specificStory/'+item.id, // your url to share
           'og:title': item.imageDescription ? item.imageDescription : 'Showofff: Videos, Memes, Quotes, Stories',
-          'og:site_name':'Showofff.com',
+          'og:site_name':'showoff.tv',
           'og:description':item.imageDescription,
           'og:image': item.imageUrl,
           'og:image:width':'200',//size of image in pixel

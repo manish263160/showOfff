@@ -219,7 +219,7 @@ action_properties: JSON.stringify({
 object : {
   'og:url': appDomain+'specificVideo/'+item.id, // your url to share
   'og:title':  item.title ? item.title : 'Showofff: Videos, Memes, Quotes, Stories',
-  'og:site_name':'Showofff.com',
+  'og:site_name':'showoff.tv',
   // 'og:description':item.description,
   'og:image': item.videoThumbnail,
   'og:image:width':'200',//size of image in pixel
