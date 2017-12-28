@@ -1,9 +1,9 @@
 app.config(['$locationProvider', function ($locationProvider) {
-    $locationProvider.hashPrefix('');
+    $locationProvider.html5Mode(true).hashPrefix('!');
   }]);
   
   app.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when("", "/video");
+    $urlRouterProvider.when("/", "/video");
     $urlRouterProvider.otherwise('/404')
     $stateProvider
 
