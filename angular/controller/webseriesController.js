@@ -2,6 +2,11 @@ app
 .controller("webseriesController",
 function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval , UIConfig) {
     
+  $rootScope.ismobileview=false;
+    if($window.innerWidth <= 768){
+      // $scope.isdesktop=false;
+      $rootScope.ismobileview=true;
+    }
         var appDomain= UIConfig.app_domain;
         $scope.appDomain =appDomain;
         $scope.videos = [];
@@ -42,7 +47,6 @@ function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval , UIC
                 var videosArray =[];
                 var allVideoArr =[];
                 data.forEach(element => {
-                    console.log("elenebtsd--",element);
                     if(element.seriesList){
                         var seriesName= element.seriesName;
                         videosArray.push(element.seriesList[0]);

@@ -163,7 +163,20 @@
                                     class="twitter">
                                        <i class="icon-twitter"></i>
                                     </a>  
-                                                </div>
+                                    <a href="javascript:void(0)" ng-if="ismobileview"
+                                    socialshare socialshare-provider="whatsapp"
+                                    socialshare-text="{{x.title}}"
+                                    socialshare-url="{{appDomain}}specificVideo/{{x.id}}"
+                                     class="whatsapp">
+                                        <i class="icon-whatsapp"></i>
+                                    </a>
+                                    <a  href="javascript:void(0)"
+                                    socialshare socialshare-provider="linkedin"
+                                    socialshare-text="{{x.title}}"
+                                    socialshare-url="{{appDomain}}specificVideo/{{x.id}}" class="linkedin">
+                                        <i class="icon-linkedin2"></i>
+                                    </a>
+                                </div>
                                             </div>
                                             <!-- Social Share end /-->
                                             <!-- <div class="tooltip">
@@ -210,23 +223,35 @@
                                                     </a>
                                                 </div>
                                             <!-- Social Share start -->
-                                        <div class="share_box" id="share_box{{$index}}">
-                                                <div class="social-icons">
-                                                        <a href="javascript:void(0)" class="facebook" ng-click="facebookshare(x)" >
-                                                                <i class="icon-facebook"></i>
-                                                                </a>
-                                                            
-                                                                  <a href="#"
-                                                                socialshare
-                                                                socialshare-provider="twitter"
-                                                                socialshare-text="{{x.title}}"
-                                                                socialshare-url="{{appDomain}}specificVideo/{{x.id}}"
-                                                                socialshare-hashtags="{{x.title}}"
-                                                                class="twitter">
-                                                                   <i class="icon-twitter"></i>
-                                                                </a> 
-                                                                
-                                                </div>
+        <div class="share_box" id="share_box{{$index}}">
+                <div class="social-icons">
+                        <a href="javascript:void(0)" class="facebook" ng-click="facebookshare(x)" >
+                                <i class="icon-facebook"></i>
+                                </a>
+                            
+                                    <a href="#"
+                                socialshare
+                                socialshare-provider="twitter"
+                                socialshare-text="{{x.title}}"
+                                socialshare-url="{{appDomain}}specificVideo/{{x.id}}"
+                                socialshare-hashtags="{{x.title}}"
+                                class="twitter">
+                                    <i class="icon-twitter"></i>
+                                </a> 
+                                <a  href="javascript:void(0)" ng-if="ismobileview"
+                                socialshare socialshare-provider="whatsapp"
+                                socialshare-text="{{x.title}}"
+                                socialshare-url="{{appDomain}}specificVideo/{{x.id}}" class="whatsapp">
+                                    <i class="icon-whatsapp"></i>
+                                </a>
+                                <a  href="javascript:void(0)"
+                                socialshare socialshare-provider="linkedin"
+                                socialshare-text="{{x.title}}"
+                                socialshare-url="{{appDomain}}specificVideo/{{x.id}}" class="linkedin">
+                                    <i class="icon-linkedin2"></i>
+                                </a>
+                                
+                </div>
                                             </div>
                                             <!-- Social Share end /-->
                                            <!--  <div class="tooltip">

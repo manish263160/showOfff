@@ -133,13 +133,25 @@ showoff.hello@gmail.com
 										<i class="icon-facebook"></i>
 									</a>
 									  <a href="javascript:void(0)"
-									socialshare
-									socialshare-provider="twitter"
+									socialshare socialshare-provider="twitter"
 									socialshare-url="{{appDomain}}specificStory/{{x.id}}"
 									socialshare-text="{{x.imageDescription}}"
 									 class="twitter">
 										<i class="icon-twitter"></i>
 									</a>  
+									<a  href="javascript:void(0)" ng-if="ismobileview"
+									socialshare socialshare-provider="whatsapp"
+									socialshare-url="{{appDomain}}specificStory/{{x.id}}"
+									socialshare-text="{{x.imageDescription}}"
+									 class="whatsapp">
+										<i class="icon-whatsapp"></i>
+									</a>
+									<a  href="javascript:void(0)"
+									socialshare socialshare-provider="linkedin"
+									socialshare-url="{{appDomain}}specificStory/{{x.id}}"
+									socialshare-text="{{x.imageDescription}}" class="linkedin">
+										<i class="icon-linkedin2"></i>
+									</a>
 								</div>
 							</div>
 							<!-- Social Share end /-->
@@ -175,6 +187,18 @@ showoff.hello@gmail.com
 										 class="twitter">
 											<i class="icon-twitter"></i>
 										</a> 
+										<a  href="javascript:void(0)" ng-if="ismobileview"
+										socialshare socialshare-provider="whatsapp"
+										socialshare-url="{{appDomain}}specificStory/{{x.id}}"
+										socialshare-text="{{x.imageDescription}}" class="whatsapp">
+											<i class="icon-whatsapp"></i>
+										</a>
+										<a href="javascript:void(0)"
+										socialshare socialshare-provider="linkedin"
+										socialshare-url="{{appDomain}}specificStory/{{x.id}}"
+										socialshare-text="{{x.imageDescription}}" class="linkedin">
+											<i class="icon-linkedin2"></i>
+										</a>
 									</div>
 								</div>
 								<!-- Social Share end /-->

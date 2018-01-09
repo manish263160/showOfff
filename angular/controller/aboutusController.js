@@ -1,7 +1,11 @@
 app
 .controller("aboutusController",
 function ($scope, $http, $window, $rootScope, $timeout, Service ,$interval) {
-
+    $rootScope.ismobileview=false;
+    if($window.innerWidth <= 768){
+      // $scope.isdesktop=false;
+      $rootScope.ismobileview=true;
+    }
     jQuery(document).ready(function ($) {
         
                     var jssor_1_options = {

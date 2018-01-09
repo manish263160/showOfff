@@ -2,6 +2,11 @@ app
 .controller("renderedStoryController",
 function ($scope,$stateParams, $http, $window, $rootScope, $timeout, Service ,$interval , UIConfig ,ngMeta) {
   
+  $rootScope.ismobileview=false;
+    if($window.innerWidth <= 768){
+      // $scope.isdesktop=false;
+      $rootScope.ismobileview=true;
+    }
       var appDomain= UIConfig.app_domain;
       $scope.appDomain =appDomain;
       var imgId = $stateParams.id;

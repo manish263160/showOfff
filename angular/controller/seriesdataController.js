@@ -2,6 +2,11 @@ app
 .controller("seriesdataController",
 function ($scope, $http, $window,$stateParams,$rootScope, $timeout, Service ,$interval , UIConfig) {
 
+  $rootScope.ismobileview=false;
+    if($window.innerWidth <= 768){
+      // $scope.isdesktop=false;
+      $rootScope.ismobileview=true;
+    }
     $scope.serId = $stateParams.data;
   var appDomain= UIConfig.app_domain;
   $scope.appDomain =appDomain;

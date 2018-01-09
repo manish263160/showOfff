@@ -125,6 +125,10 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   .social-icons .instagram:hover, .social-icons .instagram.active{background: #060709; color: #fff;}
   .social-icons .youtube{color: #ff0000; border: 1px #ff0000 solid;}
   .social-icons .youtube:hover, .social-icons .youtube.active{background: #ff0000;  color: #fff;}
+  .social-icons .whatsapp{color: #01ab01; border: 1px #01ab01 solid;}
+  .social-icons .whatsapp:hover, .social-icons .whatsapp.active{background: #01ab01;  color: #fff;}
+  .social-icons .linkedin{color: #0078bc; border: 1px #0078bc solid;}
+  .social-icons .linkedin:hover, .social-icons .whatsapp.active{background: #0078bc;  color: #fff;}
   
   
   .menu_drawer, .m_category, .category_drawer, .m_search, .icon-search2, .m_search_results{ display: none;}
@@ -140,14 +144,22 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   .share_box{ position: absolute; right:0px; background:#fff; border: 1px #eee solid; padding: 10px; z-index: 2; box-shadow:0 0 7px rgba(0,0,0,.2); border-radius:0px; margin-top: -8px; display: none;}
   .share_box .social-icons{ position: relative;}
   .share_box .social-icons a{ border-radius: 60px; width: 32px; height: 32px; margin:0 5px; line-height: 36px; font-size: 18px;}
-  .share_box .social-icons .facebook:hover{background: #4267b2; color: #fff;}
-  .share_box .social-icons .twitter:hover{background: #1da1f2; color: #ffffff;}
+  .share_box .social-icons .facebook{background: #4267b2; color: #fff;}
+  .share_box .social-icons .twitter{background: #1da1f2; color: #fff;}
+  .share_box .social-icons .whatsapp{background: #01ab01; color: #fff;}
+  .share_box .social-icons .linkedin{background: #0078bc; color: #fff;}
+  
+  .share_box .social-icons .facebook:hover{background: #fff; color: #4267b2;}
+  .share_box .social-icons .twitter:hover{background: #fff; color: #1da1f2;}
+  .share_box .social-icons .whatsapp:hover{background: #fff; color: #01ab01;}
+  .share_box .social-icons .linkedin:hover{background: #fff; color: #0078bc;}
   
   .share_box2{ bottom:0px; padding: 13px;} 
   .share_box2 .social-icons a{ border-radius: 60px; width:48px; height:48px; margin:0 8px; line-height: 52px; font-size: 26px;}
   
   
   /* Icomoon fonts */
+  
   .icon-pinterest:before {
     content: "\e908";
   }
@@ -165,11 +177,12 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   }
   .icon-download:before {
     content: "\e902";
-    color: #ff2824;
   }
   .icon-share:before {
     content: "\e903";
-    color: #ff2824;
+  }
+  .icon-whatsapp:before {
+    content: "\e909";
   }
   .icon-cross:before {
     content: "\e901";
@@ -186,7 +199,7 @@ body{font: normal 14px/24px "Roboto", sans-serif; color:#1c2324;margin:0px; padd
   .icon-instagram:before {
     content: "\ea92";
   }
-  .icon-whatsapp:before {
+  .icon-whatsapp2:before {
     content: "\ea93";
   }
   .icon-twitter:before {
